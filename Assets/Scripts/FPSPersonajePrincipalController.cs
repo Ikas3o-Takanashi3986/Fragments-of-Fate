@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class FPSPersonajePrincipalController : MonoBehaviour
@@ -17,10 +18,12 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
     public float HeightJump;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -42,7 +45,17 @@ public class FPSPersonajePrincipalController : MonoBehaviour
         float movz = Input.GetAxis("Vertical");
 
         Vector3 mover = transform.right * movx + transform.forward * movz;
+        float Magnitud = Mathf.Clamp01(mover.magnitude);
+
         Controller.Move(mover * velocidad * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            Magnitud /= 0.5f;
+        }
+
+        animator.SetFloat("InputMagnitud", Magnitud, 0.05f, Time.deltaTime);
+
 
         VelocidadGravedad.y += Gravedad * Time.deltaTime;
         Controller.Move(VelocidadGravedad * Time.deltaTime);
