@@ -19,6 +19,9 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     public float HeightJump;
 
     public Animator animator;
+    public bool isJump;
+    public bool IsGround;
+    public bool isFalling;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +38,7 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
     public void Movimiento()
     {
-        Grounded = Physics.CheckSphere(GroundCheck.position, GroundCheckDistance, GroundMask);
 
-        if (Grounded && VelocidadGravedad.y < 0)
-        {
-            VelocidadGravedad.y = -2f;
-        }
         float movx = Input.GetAxis("Horizontal");
         float movz = Input.GetAxis("Vertical");
 
@@ -56,17 +54,42 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
         animator.SetFloat("InputMagnitud", Magnitud, 0.05f, Time.deltaTime);
 
-
         VelocidadGravedad.y += Gravedad * Time.deltaTime;
         Controller.Move(VelocidadGravedad * Time.deltaTime);
     }
 
     public void Salto()
     {
+        Grounded = Physics.CheckSphere(GroundCheck.position, GroundCheckDistance, GroundMask);
+        
+        if (Grounded && VelocidadGravedad.y < 0)
+        {
+            VelocidadGravedad.y = -2f;
+            animator.SetBool("IsGrounded", true);
+            IsGround = true;
+            animator.SetBool("IsJumping", false);
+            isJump = false;
+        }
+        else
+        {
+            animator.SetBool("IsGrounded", false);
+            IsGround = false;
+
+            if(isJump && VelocidadGravedad.y < 0)
+            {
+                animator.SetBool("IsFalling", true);
+            }
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             VelocidadGravedad.y = Mathf.Sqrt(HeightJump * -2f * Gravedad);
+            animator.SetBool("IsJumping", true);
+            isJump = true;
         }
+
+        VelocidadGravedad.y += Gravedad * Time.deltaTime;
+        Controller.Move(VelocidadGravedad * Time.deltaTime);
     }
        
 }
