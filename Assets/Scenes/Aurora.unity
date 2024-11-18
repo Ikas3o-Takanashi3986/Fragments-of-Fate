@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2616466121388569337, guid: ea3016002e0ba9046ba9179568e98a6e, type: 3}
+      propertyPath: sensibilidad
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2616466121388569339, guid: ea3016002e0ba9046ba9179568e98a6e, type: 3}
       propertyPath: m_Enabled
       value: 1
