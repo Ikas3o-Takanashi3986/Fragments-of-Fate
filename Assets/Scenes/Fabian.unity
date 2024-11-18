@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 252629911600637343, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 785.59265
+      value: 785.597
       objectReference: {fileID: 0}
     - target: {fileID: 252629911600637343, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_LocalPosition.y
@@ -873,15 +873,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467118241065998512, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.75
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1467118241065998512, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000020340085
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1467118241065998512, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4921397e-12
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3874798687770068871, guid: a1648482d42851340b0961f999414488, type: 3}
       propertyPath: m_Name
@@ -912,3 +912,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LlaveR: {fileID: 500805709}
   LlaveA: {fileID: 1180892904}
+  llaveRRecolectada: 0
+  llaveARecolectada: 0
