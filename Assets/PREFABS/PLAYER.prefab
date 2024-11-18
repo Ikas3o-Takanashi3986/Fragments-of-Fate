@@ -211,6 +211,10 @@ MonoBehaviour:
   Grounded: 1
   Chequeo: 0
   HeightJump: 3
+  animator: {fileID: 0}
+  isJump: 0
+  IsGround: 0
+  isFalling: 0
 --- !u!1 &2616466122026911054
 GameObject:
   m_ObjectHideFlags: 0
