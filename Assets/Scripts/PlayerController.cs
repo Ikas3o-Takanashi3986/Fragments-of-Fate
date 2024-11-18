@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     public GameObject LlaveR;
     public GameObject LlaveA;
 
-    private bool llaveRRecolectada = false;
-    private bool llaveARecolectada = false;
+    public bool llaveRRecolectada = false;
+    public bool llaveARecolectada = false;
 
     public void RecolectarLlaveR()
     {
