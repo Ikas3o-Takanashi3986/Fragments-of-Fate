@@ -15,11 +15,10 @@ public class CodigoCristal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetButtonDown("Fire1"))
         {
+           
             Instantiate(Proyectil, transform.position, transform.rotation);
-
         }
     }
 }
