@@ -7691,6 +7691,42 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1926
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.8882233
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 5.8207654e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.45941198
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989589498322490, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -54.698
+      objectReference: {fileID: 0}
     - target: {fileID: 1325989589498572794, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -11722,6 +11758,42 @@ PrefabInstance:
     - target: {fileID: 1325989590735481909, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.327611
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.427
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.336
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.45260727
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -1.16415294e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8917099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.2369125e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325989590749282840, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -126.178
       objectReference: {fileID: 0}
     - target: {fileID: 1325989590749574104, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_Layer
