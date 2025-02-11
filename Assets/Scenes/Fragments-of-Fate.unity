@@ -30964,6 +30964,10 @@ PrefabInstance:
       propertyPath: velocidad
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2616466121457291486, guid: ea3016002e0ba9046ba9179568e98a6e, type: 3}
+      propertyPath: HeightJump
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2616466121457291487, guid: ea3016002e0ba9046ba9179568e98a6e, type: 3}
       propertyPath: m_Name
       value: PLAYER (2)
@@ -33436,6 +33440,55 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1049131031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049131033}
+  - component: {fileID: 1049131032}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1049131032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049131031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 2
+  blendDistance: 0
+  weight: 0.55
+  sharedProfile: {fileID: 11400000, guid: 4e80f69a49e797743ac940d2efa325c2, type: 2}
+--- !u!4 &1049131033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049131031}
+  m_LocalRotation: {x: -0, y: -0.3826837, z: -0, w: 0.9238795}
+  m_LocalPosition: {x: 383.7, y: 5.7, z: 398.6}
+  m_LocalScale: {x: 1.4041649, y: 10.864, z: 121.32}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &1049189158
 GameObject:
   m_ObjectHideFlags: 0
