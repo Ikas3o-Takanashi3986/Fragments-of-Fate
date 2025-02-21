@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LlaveR
   - LlaveA
+  - Objetivo1
+  - Objetivo2
   layers:
   - Default
   - TransparentFX
