@@ -23,7 +23,6 @@ public class ControllerCristal : MonoBehaviour
         {
             if (Cristal != null)
             {
-                Cristal.SetActive(false);
                 CristalRecolect = true;
                 Debug.Log("Recargada");
                 

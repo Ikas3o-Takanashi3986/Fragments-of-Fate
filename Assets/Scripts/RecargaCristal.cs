@@ -6,7 +6,7 @@ public class RecargaCristal : MonoBehaviour
 {
     private bool jugadorCerca = false;
     private float tiempoPresionando = 0f;
-    private float tiempoRequerido = 5f;
+    private float tiempoRequerido = 1f;
     
 
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class RecargaCristal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorCerca = true;
-            Debug.Log("Mantén presionada 'R' por 5 segundos para recargar cristal");
+            Debug.Log("Mantén presionada 'R' por 1 segundo para recargar cristal");
         }
     }
 
