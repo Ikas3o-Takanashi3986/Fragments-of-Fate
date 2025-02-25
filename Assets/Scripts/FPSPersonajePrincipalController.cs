@@ -15,6 +15,7 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     public LayerMask GroundMask;
     public bool Grounded;
     public bool Chequeo;
+    public bool isDodging;
 
     public float HeightJump;
 
@@ -51,6 +52,21 @@ public class FPSPersonajePrincipalController : MonoBehaviour
         {
             Magnitud /= 0.5f;
         }
+
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                animator.SetBool("IsDodging", true);
+            }
+
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Dodging Right") &&
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            {
+                animator.SetBool("IsDodging", false);
+            }
+        }
+
 
         animator.SetFloat("InputMagnitud", Magnitud, 0.05f, Time.deltaTime);
 
