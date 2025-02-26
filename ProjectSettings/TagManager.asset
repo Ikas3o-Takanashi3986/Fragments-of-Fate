@@ -9,6 +9,8 @@ TagManager:
   - Objetivo1
   - Objetivo2
   - Cristal
+  - Objeto1
+  - Objeto2
   layers:
   - Default
   - TransparentFX

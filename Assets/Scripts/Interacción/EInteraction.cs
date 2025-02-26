@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EInteraction : MonoBehaviour
+{
+    private bool jugadorCerca = false;
+    private float tiempoPresionando = 0f;
+    private float tiempoRequerido = 2f;
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (jugadorCerca)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                tiempoPresionando += Time.deltaTime;
+                Debug.Log("Tiempo presionando E: " + tiempoPresionando);
+
+                if (tiempoPresionando >= tiempoRequerido)
+                {
+                    RecolectarObject();
+                }
+            }
+            else
+            {
+                if (tiempoPresionando > 0)
+                {
+                    Debug.Log("Se interrumpió el tiempo para recolectar.");
+                }
+                tiempoPresionando = 0f;
+            }
+        }
+    }
+
+    private void RecolectarObject()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            if (gameObject.CompareTag("Objeto1"))
+            {
+                playerController.RecolectarObjeto();
+            }
+            else if (gameObject.CompareTag("Objeto2"))
+            {
+                playerController.RecolectarObjeto2();
+            }
+        }
+
+        Destroy(gameObject);
+        Debug.Log("Objeto recolectado con exito");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorCerca = true;
+            Debug.Log("Mantén presionada 'E' por 2 segundos para recoger el objeto.");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorCerca = false;
+            tiempoPresionando = 0f;
+            Debug.Log("Te alejaste del objeto.");
+        }
+    }
+}
