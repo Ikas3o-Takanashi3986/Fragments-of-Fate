@@ -9,8 +9,8 @@ TagManager:
   - Objetivo1
   - Objetivo2
   - Cristal
-  - Objeto1
   - Objeto2
+  - CristalMEMORIA
   layers:
   - Default
   - TransparentFX

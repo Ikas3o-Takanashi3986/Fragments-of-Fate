@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public bool llaveRRecolectada = false;
     public bool llaveARecolectada = false;
-    public bool objeto1Recolectado = false;
+    public bool CristalMRecolectado = false;
     public bool objeto2Recolectado = false;
 
     public void RecolectarLlaveR()
@@ -50,18 +50,18 @@ public class PlayerController : MonoBehaviour
 
     public void RecolectarObjeto()
     {
-        if (!objeto1Recolectado)
+        if (!CristalMRecolectado)
         {
             if (Object1 != null)
             {
                 Object1.SetActive(false);
-                objeto1Recolectado = true;
-                Debug.Log("Objeto 1 Recolectado");
+                CristalMRecolectado = true;
+                Debug.Log("Cristal M Recolectado");
             }
         }
         else
         {
-            Debug.Log("Obtuviste el objeto 1");
+            Debug.Log("Obtuviste el Cristal M");
         }
     }
 

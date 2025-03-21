@@ -6,10 +6,16 @@ public class Objective : MonoBehaviour
 {
     private bool jugadorCerca = false;
     private int objetivoID = 0;
+    private PlayerController playerController;
+
 
     void Start()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerController = player.GetComponent<PlayerController>();
+        }
     }
 
 
@@ -24,17 +30,27 @@ public class Objective : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.U))
             {
-               if (objetivoID == 1)
-               {
-                    Debug.Log("Recoge el CRISTAL de la MEMORIA");
-               }
-               else if (objetivoID == 2)
-               {
+                bool cristalRecolectado = playerController != null && playerController.CristalMRecolectado;
+
+                if (objetivoID == 1)
+                {
+                    if (!cristalRecolectado)
+                    {
+                        Debug.Log("Recoge el CRISTAL de la MEMORIA");
+                    }
+                    else
+                    {
+                        Debug.Log("Ya tienes el CRISTAL de la MEMORIA");
+                    }
+                }
+                else if (objetivoID == 2)
+                {
                     Debug.Log("Consigue la LLave de ACCESO");
-               }
+                }
             }
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

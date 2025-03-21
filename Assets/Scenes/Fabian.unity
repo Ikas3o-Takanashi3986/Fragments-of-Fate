@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185016892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 693.54, y: 0.8000002, z: -135.08}
+  m_LocalPosition: {x: 709.85, y: 0.8000002, z: -135.08}
   m_LocalScale: {x: 8.7334, y: 8.7334, z: 8.7334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1254,8 +1254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461011013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 679.63806, y: 0.8, z: -135.08}
-  m_LocalScale: {x: 8.7334, y: 8.7334, z: 8.7334}
+  m_LocalPosition: {x: 679.63806, y: 4.44, z: -135.08}
+  m_LocalScale: {x: 16.066837, y: 16.066837, z: 16.066837}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1492,8 +1492,8 @@ GameObject:
   - component: {fileID: 2097787647}
   - component: {fileID: 2097787652}
   m_Layer: 0
-  m_Name: Objeto1
-  m_TagString: Objeto1
+  m_Name: CRISTALmemoria
+  m_TagString: CristalMEMORIA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1530,7 +1530,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c4854f1dd0cbe84a92d1ba0e1baffc6, type: 2}
+  - {fileID: 2100000, guid: 87f18998c9919e3419bdfa4f8c43b4c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1568,7 +1568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097787646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 697.66, y: -1.67, z: -153.08}
+  m_LocalPosition: {x: 676.75, y: -1.67, z: -132.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,6 +7,7 @@ public class EInteraction : MonoBehaviour
     private bool jugadorCerca = false;
     private float tiempoPresionando = 0f;
     private float tiempoRequerido = 2f;
+    private bool cristalRecolectado = false;
 
     void Start()
     {
@@ -45,9 +46,10 @@ public class EInteraction : MonoBehaviour
         PlayerController playerController = player.GetComponent<PlayerController>();
         if (playerController != null)
         {
-            if (gameObject.CompareTag("Objeto1"))
+            if (gameObject.CompareTag("CristalMEMORIA") && !cristalRecolectado)
             {
                 playerController.RecolectarObjeto();
+                cristalRecolectado = true;
             }
             else if (gameObject.CompareTag("Objeto2"))
             {
