@@ -1384,6 +1384,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7060616517556396021, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
+    - target: {fileID: -1848511123097778888, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
     - target: {fileID: 919132149155446097, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
       propertyPath: m_Name
       value: ChikisHielo
@@ -1600,10 +1608,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8535505772457920790, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -7426120247813020860, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -7102862156053903276, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -4722899319922289712, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -3299536327693568151, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -2329899021865426417, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -1619194097320822590, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -985542389825260074, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: -113836532305646168, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 407920674411337206, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
     - target: {fileID: 919132149155446097, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
       propertyPath: m_Name
       value: ChikisPlanta
       objectReference: {fileID: 0}
+    - target: {fileID: 2295383164578159696, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 3672087041782277190, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 4358044549312027455, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 4652112863543025412, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 5215092369809260770, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 5684940025594477845, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 6640315156479141514, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 6673872055194149765, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 7414660063269183468, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
+    - target: {fileID: 7463357544053084318, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a744140d873f51946b282eb2cae80df6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07eabeb9cb62044ca54d37cc2caeed5, type: 3}
 --- !u!1001 &1586054793
