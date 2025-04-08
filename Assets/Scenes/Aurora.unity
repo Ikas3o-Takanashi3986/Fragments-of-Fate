@@ -766,10 +766,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8534381131781555531, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
+    - target: {fileID: -7649933347146280331, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
+    - target: {fileID: -5664486882823672979, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 795011577c1e2c7498a2ec6d80882ab0, type: 2}
+    - target: {fileID: -4771982769161545580, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
+    - target: {fileID: -1312128654896686809, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
     - target: {fileID: 919132149155446097, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
       propertyPath: m_Name
       value: ChikisFuego
       objectReference: {fileID: 0}
+    - target: {fileID: 1816588722248330495, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
+    - target: {fileID: 4694413516673594548, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2341060e0d7e6b45ae7ee3cadae61ca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa06cb17525e4d6489eaf39c825b77e5, type: 3}
 --- !u!1001 &782196440
@@ -1340,6 +1368,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9164591996601563255, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
     - target: {fileID: -8679921383154817045, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1388,6 +1420,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
+    - target: {fileID: -4087799375610902782, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
+    - target: {fileID: -2514980861645863603, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
     - target: {fileID: -1848511123097778888, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1396,6 +1436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChikisHielo
       objectReference: {fileID: 0}
+    - target: {fileID: 956430860537192360, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4e297189b0b746b8d700a8dc2ee75, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}
 --- !u!1001 &1506895997
