@@ -31,6 +31,8 @@ public class Objective : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.U))
             {
                 bool cristalRecolectado = playerController != null && playerController.CristalMRecolectado;
+                bool mapa1Recolectado = playerController != null && playerController.mapa1Recolectado;
+                bool mapa2Recolectado = playerController != null && playerController.mapa2Recolectado;
 
                 if (objetivoID == 1)
                 {
@@ -46,6 +48,25 @@ public class Objective : MonoBehaviour
                 else if (objetivoID == 2)
                 {
                     Debug.Log("Consigue la LLave de ACCESO");
+                }
+                else if (objetivoID == 3)
+                {
+                    if (mapa1Recolectado && mapa2Recolectado)
+                    {
+                        Debug.Log("¡Ya tienes el MAPA COMPLETO!");
+                    }
+                    else if (!mapa1Recolectado && !mapa2Recolectado)
+                    {
+                        Debug.Log("Encuentra las 2 PIEZAS del MAPA");
+                    }
+                    else if (mapa1Recolectado && !mapa2Recolectado)
+                    {
+                        Debug.Log("Tienes la PRIMERA pieza del MAPA.");
+                    }
+                    else if (!mapa1Recolectado && mapa2Recolectado)
+                    {
+                        Debug.Log("Tienes la SEGUNDA pieza del MAPA.");
+                    }
                 }
             }
         }
@@ -65,6 +86,10 @@ public class Objective : MonoBehaviour
             else if (gameObject.name == "Objetivo2")
             {
                 objetivoID = 2;
+            }
+            else if (gameObject.name == "Objetivo3")
+            {
+                objetivoID = 3;
             }
         }
     }

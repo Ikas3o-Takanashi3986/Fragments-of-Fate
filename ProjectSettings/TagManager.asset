@@ -12,6 +12,9 @@ TagManager:
   - Objeto2
   - CristalMEMORIA
   - prota
+  - Mapa2
+  - Mapa1
+  - Objetivo3
   layers:
   - Default
   - TransparentFX
