@@ -8,11 +8,15 @@ public class PlayerController : MonoBehaviour
     public GameObject LlaveA;
     public GameObject Object1;
     public GameObject Object2;
+    public GameObject Mapa1;
+    public GameObject Mapa2;
 
     public bool llaveRRecolectada = false;
     public bool llaveARecolectada = false;
     public bool CristalMRecolectado = false;
     public bool objeto2Recolectado = false;
+    public bool mapa1Recolectado = false;
+    public bool mapa2Recolectado = false;
 
     public void RecolectarLlaveR()
     {
@@ -81,4 +85,32 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Obtuviste el objeto 2");
         }
     }
+
+    public void RecolectarMapa1()
+    {
+        if (!mapa1Recolectado)
+        {
+            if (Mapa1 != null)
+            {
+                Mapa1.SetActive(false);
+                mapa1Recolectado = true;
+                Debug.Log("Mapa 1 recolectado.");
+            }
+        }
+    }
+
+    public void RecolectarMapa2()
+    {
+        if (!mapa2Recolectado)
+        {
+            if (Mapa2 != null)
+            {
+                Mapa2.SetActive(false);
+                mapa2Recolectado = true;
+                Debug.Log("Mapa 2 recolectado.");
+            }
+        }
+    }
+
+
 }
