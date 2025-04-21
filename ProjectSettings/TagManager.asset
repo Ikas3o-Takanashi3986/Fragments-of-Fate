@@ -15,6 +15,10 @@ TagManager:
   - Mapa2
   - Mapa1
   - Objetivo3
+  - FuegoEnemigo
+  - PlantaEnemigo
+  - HieloEnemigo
+  - AguaEnemigo
   layers:
   - Default
   - TransparentFX
