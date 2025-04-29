@@ -8,6 +8,7 @@ public class EInteraction : MonoBehaviour
     private float tiempoPresionando = 0f;
     private float tiempoRequerido = 2f;
     private bool cristalRecolectado = false;
+    private bool LlaveDeAcceso1Recolectada = false;
 
     void Start()
     {
@@ -51,9 +52,10 @@ public class EInteraction : MonoBehaviour
                 playerController.RecolectarObjeto();
                 cristalRecolectado = true;
             }
-            else if (gameObject.CompareTag("Objeto2"))
+            else if (gameObject.CompareTag("Objeto2") && !LlaveDeAcceso1Recolectada)
             {
-                playerController.RecolectarObjeto2();
+                playerController.RecolectarLlaves();
+                LlaveDeAcceso1Recolectada = true;
             }
         }
 

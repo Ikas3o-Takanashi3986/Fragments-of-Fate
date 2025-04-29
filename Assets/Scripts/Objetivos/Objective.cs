@@ -33,6 +33,7 @@ public class Objective : MonoBehaviour
                 bool cristalRecolectado = playerController != null && playerController.CristalMRecolectado;
                 bool mapa1Recolectado = playerController != null && playerController.mapa1Recolectado;
                 bool mapa2Recolectado = playerController != null && playerController.mapa2Recolectado;
+                bool LlaveDeAcceso1Recolectada = playerController != null && playerController.LlaveDeAcceso1Recolectada;
 
                 if (objetivoID == 1)
                 {
@@ -47,7 +48,15 @@ public class Objective : MonoBehaviour
                 }
                 else if (objetivoID == 2)
                 {
-                    Debug.Log("Consigue la LLave de ACCESO");
+                    if (!LlaveDeAcceso1Recolectada)
+                    {
+                        Debug.Log("Consigue la LLave de ACCESO");
+                    }
+                    else
+                    {
+                        Debug.Log("Ya tienes la Llave 1");
+                    }
+
                 }
                 else if (objetivoID == 3)
                 {
