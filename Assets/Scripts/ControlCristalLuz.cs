@@ -49,7 +49,7 @@ public class ControlCristalLuz : MonoBehaviour
             lightToControlRenderer.material.color = Color.white;
         }
 
-        yield return new WaitForSeconds(lightOnDuration);
+        yield return new WaitForSecondsRealtime(lightOnDuration);
 
         lightToControl.enabled = false;
 
