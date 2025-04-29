@@ -31,6 +31,48 @@ public class StatsPlayer : MonoBehaviour
                 
             }
 
+            if (collision.transform.tag == "PlantaEnemigo")
+            {
+                vida = vida - 1f;
+                Destroy(collision.transform.gameObject);
+
+                if (vida == 0)
+                {
+                    Debug.Log("Has perdido");
+                    Time.timeScale = 0;
+
+                }
+
+            }
+
+            if (collision.transform.tag == "HieloEnemigo")
+            {
+                vida = vida - 1f;
+                Destroy(collision.transform.gameObject);
+
+                if (vida == 0)
+                {
+                    Debug.Log("Has perdido");
+                    Time.timeScale = 0;
+
+                }
+
+            }
+
+            if (collision.transform.tag == "AguaEnemigo")
+            {
+                vida = vida - 1f;
+                Destroy(collision.transform.gameObject);
+
+                if (vida == 0)
+                {
+                    Debug.Log("Has perdido");
+                    Time.timeScale = 0;
+
+                }
+
+            }
+
         }
 
     }

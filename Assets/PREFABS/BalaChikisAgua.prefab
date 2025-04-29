@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5162408870822633968}
   m_Layer: 0
   m_Name: BalaChikisAgua
-  m_TagString: Untagged
+  m_TagString: AguaEnemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
