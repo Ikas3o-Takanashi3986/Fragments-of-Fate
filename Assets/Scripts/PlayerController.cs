@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Object2;
     public GameObject Mapa1;
     public GameObject Mapa2;
+    public GameObject Llave1;
 
     public bool llaveRRecolectada = false;
     public bool llaveARecolectada = false;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool objeto2Recolectado = false;
     public bool mapa1Recolectado = false;
     public bool mapa2Recolectado = false;
+    public bool LlaveDeAcceso1Recolectada = false;
 
     public void RecolectarLlaveR()
     {
@@ -108,6 +110,23 @@ public class PlayerController : MonoBehaviour
                 Mapa2.SetActive(false);
                 mapa2Recolectado = true;
                 Debug.Log("Mapa 2 recolectado.");
+            }
+        }
+    }
+
+    public void RecolectarLlaves()
+    {
+        if (!LlaveDeAcceso1Recolectada)
+        {
+            if (Llave1 != null)
+            {
+                Llave1.SetActive(false);
+                LlaveDeAcceso1Recolectada = true;
+                Debug.Log("Llave 1 Recolectada.");
+            }
+            else
+            {
+                Debug.Log("Obtuviste la Llave 1");
             }
         }
     }
