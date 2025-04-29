@@ -12,9 +12,9 @@ public class ControlCristalLuz : MonoBehaviour
     
     void Start()
     {
-        currentLight = GetComponent<Light>();
+        currentLight = GetComponentInChildren<Light>();
 
-        currentLightRenderer = GetComponent<Renderer>();
+        currentLightRenderer = GetComponentInChildren<Renderer>();
         if (currentLightRenderer != null)
         {
             currentLightRenderer.material.color = Color.gray;
@@ -43,7 +43,7 @@ public class ControlCristalLuz : MonoBehaviour
 
         lightToControl.enabled = true;
 
-        Renderer lightToControlRenderer = lightToControl.GetComponent<Renderer>();
+        Renderer lightToControlRenderer = lightToControl.GetComponentInChildren<Renderer>();
         if (lightToControlRenderer != null)
         {
             lightToControlRenderer.material.color = Color.white;
