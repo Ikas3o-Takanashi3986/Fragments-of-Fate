@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: 5
   intensity:
     m_OverrideState: 1
-    m_Value: 0.34
+    m_Value: 0.733
   response:
     m_OverrideState: 1
-    m_Value: 0.85
+    m_Value: 0.813
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.63
+    m_Value: -0.13
   xMultiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   scale:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2.95
 --- !u!114 &4450326533359976827
 MonoBehaviour:

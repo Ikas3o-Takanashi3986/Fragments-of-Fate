@@ -46210,6 +46210,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7298295486188586940, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298295486188586942, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426777, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_Name
       value: PLAYER (2)
