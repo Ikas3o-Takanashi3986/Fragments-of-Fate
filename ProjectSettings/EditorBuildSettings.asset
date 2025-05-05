@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Fabian.unity
     guid: a130628319f0a814aaf223a5cbc7aded
+  - enabled: 1
+    path: Assets/Scenes/MENU.unity
+    guid: b5745ac033c743c4c91b16ed9696761c
   m_configObjects: {}
