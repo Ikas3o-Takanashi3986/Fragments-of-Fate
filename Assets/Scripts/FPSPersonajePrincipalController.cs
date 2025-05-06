@@ -97,7 +97,7 @@ public class FPSPersonajePrincipalController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Grounded && Input.GetButtonDown("Jump"))
         {
             VelocidadGravedad.y = Mathf.Sqrt(HeightJump * -2f * Gravedad);
             animator.SetBool("IsJumping", true);

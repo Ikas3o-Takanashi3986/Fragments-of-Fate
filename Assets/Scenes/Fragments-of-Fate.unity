@@ -46218,6 +46218,10 @@ PrefabInstance:
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7298295486394426776, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
+      propertyPath: HeightJump
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426777, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_Name
       value: PLAYER (2)
