@@ -7,6 +7,7 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 {
     public CharacterController Controller;
     public float velocidad;
+    public float velocidadCorrer;
 
     public Vector3 VelocidadGravedad;
     public float Gravedad = -9.81f;
@@ -16,6 +17,7 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     public bool Grounded;
     public bool Chequeo;
     public bool isDodging;
+    private bool isRunning;
 
     public float HeightJump;
 
@@ -24,10 +26,15 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     public bool IsGround;
     public bool isFalling;
 
+    public AudioSource audioSource;
+    public AudioClip caminarClip;
+    private bool isWalking;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,13 +52,39 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
         Vector3 mover = transform.right * movx + transform.forward * movz;
         float Magnitud = Mathf.Clamp01(mover.magnitude);
+        mover = mover.normalized;
 
-        Controller.Move(mover * velocidad * Time.deltaTime);
+        isRunning = (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Magnitud > 0f;
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        float velocidadActual = isRunning ? velocidadCorrer : velocidad;
+
+        Controller.Move(mover * velocidadActual * Time.deltaTime);
+
+        float magnitudFinal = isRunning ? 2f : Magnitud;
+        animator.SetFloat("InputMagnitud", magnitudFinal, 0.05f, Time.deltaTime);
+
+        if (Magnitud > 0.1f && !isRunning && !isWalking)
         {
-            Magnitud /= 0.5f;
+
+            isWalking = true;
+            
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = caminarClip;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+
         }
+        else if (Magnitud <= 0f || isRunning)
+        {
+            if (isWalking)
+            {
+                isWalking = false;
+                audioSource.Stop();
+            }
+        }
+
 
         {
             if (Input.GetKeyDown(KeyCode.Q))
@@ -66,9 +99,6 @@ public class FPSPersonajePrincipalController : MonoBehaviour
                 animator.SetBool("IsDodging", false);
             }
         }
-
-
-        animator.SetFloat("InputMagnitud", Magnitud, 0.05f, Time.deltaTime);
 
         VelocidadGravedad.y += Gravedad * Time.deltaTime;
         Controller.Move(VelocidadGravedad * Time.deltaTime);
