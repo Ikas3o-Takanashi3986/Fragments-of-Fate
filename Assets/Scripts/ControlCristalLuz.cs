@@ -9,7 +9,10 @@ public class ControlCristalLuz : MonoBehaviour
 
     private Light currentLight;
     private Renderer currentLightRenderer;
-    
+
+    public AudioSource audioSourceLIGHT;
+    public AudioClip linternaClip;
+
     void Start()
     {
         currentLight = GetComponentInChildren<Light>();
@@ -47,6 +50,11 @@ public class ControlCristalLuz : MonoBehaviour
         if (lightToControlRenderer != null)
         {
             lightToControlRenderer.material.color = Color.white;
+        }
+
+        if (audioSourceLIGHT != null && linternaClip != null)
+        {
+            audioSourceLIGHT.PlayOneShot(linternaClip);
         }
 
         yield return new WaitForSecondsRealtime(lightOnDuration);

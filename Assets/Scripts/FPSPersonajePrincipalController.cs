@@ -27,7 +27,9 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     public bool isFalling;
 
     public AudioSource audioSource;
+    public AudioSource audioSourceRun;
     public AudioClip caminarClip;
+    public AudioClip correrClip;
     private bool isWalking;
 
     // Start is called before the first frame update
@@ -63,11 +65,8 @@ public class FPSPersonajePrincipalController : MonoBehaviour
         float magnitudFinal = isRunning ? 2f : Magnitud;
         animator.SetFloat("InputMagnitud", magnitudFinal, 0.05f, Time.deltaTime);
 
-        if (Magnitud > 0.1f && !isRunning && !isWalking)
+        if (Magnitud > 0.1f && !isRunning)
         {
-
-            isWalking = true;
-            
             if (!audioSource.isPlaying)
             {
                 audioSource.clip = caminarClip;
@@ -75,14 +74,32 @@ public class FPSPersonajePrincipalController : MonoBehaviour
                 audioSource.Play();
             }
 
+
+            if (audioSourceRun.isPlaying)
+                audioSourceRun.Stop();
         }
-        else if (Magnitud <= 0f || isRunning)
+
+        else if (isRunning)
         {
-            if (isWalking)
+            if (!audioSourceRun.isPlaying)
             {
-                isWalking = false;
-                audioSource.Stop();
+                audioSourceRun.clip = correrClip;
+                audioSourceRun.loop = true;
+                audioSourceRun.Play();
             }
+
+
+            if (audioSource.isPlaying)
+                audioSource.Stop();
+        }
+
+        else
+        {
+            if (audioSource.isPlaying)
+                audioSource.Stop();
+
+            if (audioSourceRun.isPlaying)
+                audioSourceRun.Stop();
         }
 
 
