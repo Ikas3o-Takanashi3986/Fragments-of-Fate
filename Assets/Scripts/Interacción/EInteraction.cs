@@ -10,6 +10,12 @@ public class EInteraction : MonoBehaviour
     private bool cristalRecolectado = false;
     private bool LlaveDeAcceso1Recolectada = false;
 
+    public AudioSource audioSourceKey;
+    public AudioClip sonidoLlave;
+
+    public AudioSource audioSourceCRISTAL;
+    public AudioClip sonidoCRISTAL;
+
     void Start()
     {
         
@@ -51,11 +57,21 @@ public class EInteraction : MonoBehaviour
             {
                 playerController.RecolectarObjeto();
                 cristalRecolectado = true;
+
+                if (sonidoCRISTAL != null && audioSourceCRISTAL != null)
+                {
+                    audioSourceCRISTAL.PlayOneShot(sonidoCRISTAL);
+                }
             }
             else if (gameObject.CompareTag("Objeto2") && !LlaveDeAcceso1Recolectada)
             {
                 playerController.RecolectarLlaves();
                 LlaveDeAcceso1Recolectada = true;
+
+                if (sonidoLlave != null && audioSourceKey != null)
+                {
+                    audioSourceKey.PlayOneShot(sonidoLlave);
+                }
             }
         }
 
