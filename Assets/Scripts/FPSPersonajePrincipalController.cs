@@ -28,9 +28,13 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioSource audioSourceRun;
+    public AudioSource audioSourceCayó;
     public AudioClip caminarClip;
     public AudioClip correrClip;
+    public AudioClip cayóClip;
+
     private bool isWalking;
+    private bool haCaido = false;
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +127,9 @@ public class FPSPersonajePrincipalController : MonoBehaviour
 
     public void Salto()
     {
+
+        bool estabaEnElAire = !Grounded;
+
         Grounded = Physics.CheckSphere(GroundCheck.position, GroundCheckDistance, GroundMask);
         
         if (Grounded && VelocidadGravedad.y < 0)
@@ -132,6 +139,12 @@ public class FPSPersonajePrincipalController : MonoBehaviour
             IsGround = true;
             animator.SetBool("IsJumping", false);
             isJump = false;
+
+            if (estabaEnElAire && !haCaido && cayóClip != null)
+            {
+                audioSourceCayó.PlayOneShot(cayóClip);
+                haCaido = true;
+            }
         }
         else
         {
@@ -142,6 +155,8 @@ public class FPSPersonajePrincipalController : MonoBehaviour
             {
                 animator.SetBool("IsFalling", true);
             }
+
+            haCaido = false;
         }
 
         if (Grounded && Input.GetButtonDown("Jump"))
@@ -149,6 +164,8 @@ public class FPSPersonajePrincipalController : MonoBehaviour
             VelocidadGravedad.y = Mathf.Sqrt(HeightJump * -2f * Gravedad);
             animator.SetBool("IsJumping", true);
             isJump = true;
+
+            haCaido = false;
         }
 
         VelocidadGravedad.y += Gravedad * Time.deltaTime;
