@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CodigoCristal : MonoBehaviour
 {
-    public GameObject Proyectil;
+    //public GameObject Proyectil;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +15,10 @@ public class CodigoCristal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        //if (Input.GetButtonDown("Fire1"))
         {
            
-            Instantiate(Proyectil, transform.position, transform.rotation);
+            //Instantiate(Proyectil, transform.position, transform.rotation);
         }
     }
 }

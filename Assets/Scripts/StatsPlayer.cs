@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StatsPlayer : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class StatsPlayer : MonoBehaviour
     private float tiempoDuracion = 4f;
     private float temporizadorDaño = 0f;
     private float temporizadorDuracion = 0f;
+
+    public GameObject Load;
+    public float tiempoEspera = 60f;
+    public Image barraCarga;
+
+    private float temporizador = 0f;
 
     private void Awake()
     {
@@ -111,6 +118,39 @@ public class StatsPlayer : MonoBehaviour
                 Debug.Log("Has perdido");
             }
         }
+    }
+
+    public void CargarEscena1()
+    {
+
+        StartCoroutine(CargarConBarra());
+
+        Destroy(Load);
+    }
+
+    IEnumerator CargarConBarra()
+    {
+
+        temporizador = 0f;
+        barraCarga.fillAmount = 0f;
+
+
+        while (temporizador < tiempoEspera)
+        {
+            temporizador += Time.deltaTime * 0.5f;
+            barraCarga.fillAmount = temporizador / tiempoEspera;
+            yield return null;
+        }
+
+
+        CargarEscena();
+    }
+
+    void CargarEscena()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        vida = 100f;
     }
 
 }

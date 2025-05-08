@@ -7,16 +7,19 @@ public class CamaraPersonajePrincipal : MonoBehaviour
     public float sensibilidad;
     public GameObject player;
     private float XRotation = 0f;
+    private bool cursorLibre = false;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
     }
 
 
     void Update()
     {
+
+        MouseChange();
+
         float mouseX = Input.GetAxis("Mouse X") * sensibilidad * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensibilidad * Time.deltaTime;
 
@@ -29,5 +32,24 @@ public class CamaraPersonajePrincipal : MonoBehaviour
         transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
 
         player.transform.Rotate(Vector3.up * mouseX);
+    }
+
+    public void MouseChange()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            cursorLibre = !cursorLibre;
+        }
+
+        if (cursorLibre)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
