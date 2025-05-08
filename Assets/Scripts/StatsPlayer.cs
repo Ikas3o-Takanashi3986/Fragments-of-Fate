@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StatsPlayer : MonoBehaviour
 {
 
+
     public static StatsPlayer Instance;
 
     public static float vida = 100f;
@@ -38,7 +39,7 @@ public class StatsPlayer : MonoBehaviour
             {
                 vida -= 2f;
                 temporizadorDaño = 0f;
-                Debug.Log("Daño continuo de FUEGO recibido");
+                Debug.Log("Daño continuo de FUEGO recibido. Vida: " + vida);
 
                 if (vida <= 0)
                 {
@@ -47,13 +48,12 @@ public class StatsPlayer : MonoBehaviour
                 }
             }
 
-
             if (temporizadorDuracion >= tiempoDuracion)
             {
                 fuegoActivo = false;
                 temporizadorDuracion = 0f;
                 temporizadorDaño = 0f;
-                Debug.Log("Efecto de fuego terminado");
+                Debug.Log("Efecto de FUEGO finalizado");
             }
         }
     }
@@ -67,7 +67,7 @@ public class StatsPlayer : MonoBehaviour
                 fuegoActivo = true;
                 temporizadorDuracion = 0f;
                 temporizadorDaño = 0f;
-                Debug.Log("Entró en contacto con FUEGO");
+                Debug.Log("Entró en contacto con el FUEGO");
             }
 
             Destroy(other.gameObject);
@@ -78,6 +78,12 @@ public class StatsPlayer : MonoBehaviour
             vida -= 4f;
             Destroy(other.gameObject);
             Debug.Log("Daño de PLANTA recibido");
+
+            if (vida <= 0)
+            {
+                Time.timeScale = 0;
+                Debug.Log("Has perdido");
+            }
         }
 
         if (other.CompareTag("HieloEnemigo"))
@@ -85,6 +91,12 @@ public class StatsPlayer : MonoBehaviour
             vida -= 10f;
             Destroy(other.gameObject);
             Debug.Log("Daño de HIELO recibido");
+
+            if (vida <= 0)
+            {
+                Time.timeScale = 0;
+                Debug.Log("Has perdido");
+            }
         }
 
         if (other.CompareTag("AguaEnemigo"))
@@ -92,13 +104,12 @@ public class StatsPlayer : MonoBehaviour
             vida -= 5f;
             Destroy(other.gameObject);
             Debug.Log("Daño de AGUA recibido");
-        }
 
-
-        if (vida <= 0)
-        {
-            Time.timeScale = 0;
-            Debug.Log("Has perdido");
+            if (vida <= 0)
+            {
+                Time.timeScale = 0;
+                Debug.Log("Has perdido");
+            }
         }
     }
 
