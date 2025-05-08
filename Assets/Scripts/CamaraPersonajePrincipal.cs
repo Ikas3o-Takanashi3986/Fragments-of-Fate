@@ -7,14 +7,14 @@ public class CamaraPersonajePrincipal : MonoBehaviour
     public float sensibilidad;
     public GameObject player;
     private float XRotation = 0f;
-    // Start is called before the first frame update
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * sensibilidad * Time.deltaTime;
