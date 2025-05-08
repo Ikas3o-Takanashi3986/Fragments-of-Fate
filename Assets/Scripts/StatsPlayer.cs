@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class StatsPlayer : MonoBehaviour
 {
-    public static float vida = 20f;
+    
+    public  float vida = 20f;
+
 
     void Start()
     {
