@@ -1,79 +1,105 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatsPlayer : MonoBehaviour
 {
-    public static float vida = 20f;
+
+    public static StatsPlayer Instance;
+
+    public static float vida = 100f;
+
+    private bool fuegoActivo = false;
+    private float tiempoDeDaño = 1f;
+    private float tiempoDuracion = 4f;
+    private float temporizadorDaño = 0f;
+    private float temporizadorDuracion = 0f;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (fuegoActivo)
+        {
+            temporizadorDuracion += Time.deltaTime;
+            temporizadorDaño += Time.deltaTime;
+
+            if (temporizadorDaño >= tiempoDeDaño)
+            {
+                vida -= 2f;
+                temporizadorDaño = 0f;
+                Debug.Log("Daño continuo de FUEGO recibido");
+
+                if (vida <= 0)
+                {
+                    Time.timeScale = 0;
+                    Debug.Log("Has perdido");
+                }
+            }
+
+
+            if (temporizadorDuracion >= tiempoDuracion)
+            {
+                fuegoActivo = false;
+                temporizadorDuracion = 0f;
+                temporizadorDaño = 0f;
+                Debug.Log("Efecto de fuego terminado");
+            }
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.tag == "FuegoEnemigo")
+        if (other.CompareTag("FuegoEnemigo"))
         {
-            vida = vida - 1f;
-            Destroy(collision.transform.gameObject);
-
-            if (vida == 0)
+            if (!fuegoActivo)
             {
-                Debug.Log("Has perdido");
-                Time.timeScale = 0;
-                
+                fuegoActivo = true;
+                temporizadorDuracion = 0f;
+                temporizadorDaño = 0f;
+                Debug.Log("Entró en contacto con FUEGO");
             }
 
-            if (collision.transform.tag == "PlantaEnemigo")
-            {
-                vida = vida - 1f;
-                Destroy(collision.transform.gameObject);
-
-                if (vida == 0)
-                {
-                    Debug.Log("Has perdido");
-                    Time.timeScale = 0;
-
-                }
-
-            }
-
-            if (collision.transform.tag == "HieloEnemigo")
-            {
-                vida = vida - 1f;
-                Destroy(collision.transform.gameObject);
-
-                if (vida == 0)
-                {
-                    Debug.Log("Has perdido");
-                    Time.timeScale = 0;
-
-                }
-
-            }
-
-            if (collision.transform.tag == "AguaEnemigo")
-            {
-                vida = vida - 1f;
-                Destroy(collision.transform.gameObject);
-
-                if (vida == 0)
-                {
-                    Debug.Log("Has perdido");
-                    Time.timeScale = 0;
-
-                }
-
-            }
-
+            Destroy(other.gameObject);
         }
 
+        if (other.CompareTag("PlantaEnemigo"))
+        {
+            vida -= 4f;
+            Destroy(other.gameObject);
+            Debug.Log("Daño de PLANTA recibido");
+        }
+
+        if (other.CompareTag("HieloEnemigo"))
+        {
+            vida -= 10f;
+            Destroy(other.gameObject);
+            Debug.Log("Daño de HIELO recibido");
+        }
+
+        if (other.CompareTag("AguaEnemigo"))
+        {
+            vida -= 5f;
+            Destroy(other.gameObject);
+            Debug.Log("Daño de AGUA recibido");
+        }
+
+
+        if (vida <= 0)
+        {
+            Time.timeScale = 0;
+            Debug.Log("Has perdido");
+        }
     }
+
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6769643007392220342}
   - component: {fileID: 6769643007392220337}
   - component: {fileID: 6769643007392220336}
+  - component: {fileID: 9212029594665167145}
   m_Layer: 0
   m_Name: EnemigoPlanta
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 6769643007392220339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 676.391, y: -144.209, z: -39.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6769643008371186085}
   - {fileID: 6769643007666106099}
@@ -124,6 +125,19 @@ MonoBehaviour:
   pointerbala: {fileID: 6769643007666106099}
   tiempo: 2.3
   tiempoRestante: 2.3
+--- !u!65 &9212029594665167145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769643007392220339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.99, z: 0.7}
+  m_Center: {x: 0, y: 0.64, z: 0}
 --- !u!1 &6769643007666106098
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6769643007666106098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: 0.191, z: 0.28}
+  m_LocalPosition: {x: 0.004, y: 0.34, z: 0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

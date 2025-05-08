@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3124528874791360098}
   - component: {fileID: 3124528874791360099}
   - component: {fileID: 3124528874791360096}
+  - component: {fileID: -5020748992125293113}
   m_Layer: 0
   m_Name: EnemigoFuego
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 3124528874791360094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 676.94, y: -144.231, z: -38.351}
-  m_LocalScale: {x: 0.4349165, y: 0.22295626, z: 0.77348}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 0.5126415, z: 1.7784562}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3124528875129246860}
   - {fileID: 3124528874825902395}
@@ -124,6 +125,19 @@ MonoBehaviour:
   pointerbala: {fileID: 3124528874825902395}
   tiempo: 2
   tiempoRestante: 2
+--- !u!65 &-5020748992125293113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124528874791360094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.94, y: 5, z: 1.23}
+  m_Center: {x: 0, y: 3.16, z: 0}
 --- !u!1 &3124528874825902392
 GameObject:
   m_ObjectHideFlags: 0
