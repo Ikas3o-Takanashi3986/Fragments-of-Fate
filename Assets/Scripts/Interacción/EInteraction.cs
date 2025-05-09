@@ -10,6 +10,8 @@ public class EInteraction : MonoBehaviour
     private bool cristalRecolectado = false;
     private bool LlaveDeAcceso1Recolectada = false;
 
+    public DialogueTrigger dialogueTrigger;
+
     public AudioSource audioSourceKey;
     public AudioClip sonidoLlave;
 
@@ -73,6 +75,11 @@ public class EInteraction : MonoBehaviour
                     audioSourceKey.PlayOneShot(sonidoLlave);
                 }
             }
+        }
+
+        if (dialogueTrigger != null)
+        {
+            dialogueTrigger.TriggerDesactivar();
         }
 
         Destroy(gameObject);
