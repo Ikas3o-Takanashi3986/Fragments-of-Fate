@@ -4663,6 +4663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487bac93c677c143a15c9ccced24dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
 --- !u!65 &417933704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38336,6 +38337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beac7864e825ede4b96ef0cacaa9918e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjetivoM: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   audioSourceKey: {fileID: 750367691}
   sonidoLlave: {fileID: 8300000, guid: f41f6937e5ec0c7419fbfdcfe252ac6b, type: 3}
@@ -40353,6 +40355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487bac93c677c143a15c9ccced24dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
 --- !u!65 &1385203769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45204,6 +45207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487bac93c677c143a15c9ccced24dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 0}
 --- !u!65 &1856422593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45297,7 +45301,7 @@ MonoBehaviour:
   dialogue:
     name: Objetivo
     sentences:
-    - Preciona U para tu Objetivo.
+    - Preciona U.
     - Recoge el Cristal de la memoria.
   PanelDialogo: {fileID: 170543704}
 --- !u!114 &1856422598
@@ -47699,6 +47703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beac7864e825ede4b96ef0cacaa9918e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjetivoM: {fileID: 1856422591}
   dialogueTrigger: {fileID: 1856422597}
   audioSourceKey: {fileID: 0}
   sonidoLlave: {fileID: 0}

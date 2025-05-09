@@ -8,6 +8,7 @@ public class Objective : MonoBehaviour
     private int objetivoID = 0;
     private PlayerController playerController;
 
+    public DialogueTrigger dialogueTrigger;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class Objective : MonoBehaviour
     {
         if (jugadorCerca)
         {
-            if (Input.GetKeyDown(KeyCode.U))
+            if (jugadorCerca && Input.GetKeyDown(KeyCode.U))
             {
                 bool cristalRecolectado = playerController != null && playerController.CristalMRecolectado;
                 bool mapa1Recolectado = playerController != null && playerController.mapa1Recolectado;
@@ -40,6 +41,10 @@ public class Objective : MonoBehaviour
                     if (!cristalRecolectado)
                     {
                         Debug.Log("Recoge el CRISTAL de la MEMORIA");
+                        if (dialogueTrigger != null)
+                        {
+                            dialogueTrigger.TriggerDialogue();
+                        }
                     }
                     else
                     {
@@ -51,6 +56,10 @@ public class Objective : MonoBehaviour
                     if (!LlaveDeAcceso1Recolectada)
                     {
                         Debug.Log("Consigue la LLave de ACCESO");
+                        if (dialogueTrigger != null)
+                        {
+                            dialogueTrigger.TriggerDialogue();
+                        }
                     }
                     else
                     {

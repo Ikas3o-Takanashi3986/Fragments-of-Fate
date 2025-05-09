@@ -9,8 +9,11 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        PanelDialogo.SetActive(true);
-        FindObjectOfType<DialogueMAnager>().StartDialogo(dialogue);
+        if (!FindObjectOfType<EInteraction>().CristalRecolectado)
+        {
+            PanelDialogo.SetActive(true);
+            FindObjectOfType<DialogueMAnager>().StartDialogo(dialogue);
+        }
     }
 
 

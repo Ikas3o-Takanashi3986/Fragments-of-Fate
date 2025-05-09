@@ -10,6 +10,8 @@ public class EInteraction : MonoBehaviour
     private bool cristalRecolectado = false;
     private bool LlaveDeAcceso1Recolectada = false;
 
+    public GameObject ObjetivoM;
+
     public DialogueTrigger dialogueTrigger;
 
     public AudioSource audioSourceKey;
@@ -17,6 +19,11 @@ public class EInteraction : MonoBehaviour
 
     public AudioSource audioSourceCRISTAL;
     public AudioClip sonidoCRISTAL;
+
+    public bool CristalRecolectado
+    {
+        get { return cristalRecolectado; }
+    }
 
     void Start()
     {
@@ -26,7 +33,7 @@ public class EInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jugadorCerca)
+        if (jugadorCerca && !cristalRecolectado)
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -64,6 +71,7 @@ public class EInteraction : MonoBehaviour
                 {
                     audioSourceCRISTAL.PlayOneShot(sonidoCRISTAL);
                 }
+
             }
             else if (gameObject.CompareTag("Objeto2") && !LlaveDeAcceso1Recolectada)
             {
@@ -82,13 +90,15 @@ public class EInteraction : MonoBehaviour
             dialogueTrigger.TriggerDesactivar();
         }
 
+        ObjetivoM.SetActive(false);
+
         Destroy(gameObject);
         Debug.Log("Objeto recolectado con exito");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !cristalRecolectado) 
         {
             jugadorCerca = true;
             Debug.Log("Mantén presionada 'E' por 2 segundos para recoger el objeto.");
