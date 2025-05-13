@@ -11,6 +11,8 @@ public class DialogueMAnager : MonoBehaviour
     public Text nameText;
     public Text dialogoText;
 
+
+
     private bool dialogoActivo = false;
 
     private void Start()

@@ -11,8 +11,10 @@ public class EInteraction : MonoBehaviour
     private bool LlaveDeAcceso1Recolectada = false;
 
     public GameObject ObjetivoM;
+    public GameObject ObjetivoLLave;
 
     public DialogueTrigger dialogueTrigger;
+    public DialogueTrigger dialogueTriggerl;
 
     public AudioSource audioSourceKey;
     public AudioClip sonidoLlave;
@@ -89,6 +91,16 @@ public class EInteraction : MonoBehaviour
         {
             dialogueTrigger.TriggerDesactivar();
         }
+
+        if (gameObject.CompareTag("CristalMEMORIA") && ObjetivoM != null)
+        {
+            ObjetivoM.SetActive(false);
+        }
+        else if (gameObject.CompareTag("Objeto2") && ObjetivoLLave != null)
+        {
+            ObjetivoLLave.SetActive(false);
+        }
+
 
         ObjetivoM.SetActive(false);
 

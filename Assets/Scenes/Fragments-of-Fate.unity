@@ -1797,7 +1797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 105
+  m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120526286
 GameObject:
@@ -4740,7 +4740,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 102
+  m_RootOrder: 103
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1001 &429896334
 PrefabInstance:
@@ -22722,8 +22722,16 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5260585739805715386, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5260585739805715386, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260585739805715386, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5260585739805715386, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_TagString
@@ -32345,7 +32353,7 @@ RectTransform:
   - {fileID: 1530889485}
   - {fileID: 170543707}
   m_Father: {fileID: 0}
-  m_RootOrder: 104
+  m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -33684,6 +33692,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7298295486188586931, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
   m_PrefabInstance: {fileID: 4685800801444896903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &654269374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654269375}
+  m_Layer: 0
+  m_Name: M
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654269375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654269374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 391.592, y: 5.085, z: 456.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 99
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658855269
 GameObject:
   m_ObjectHideFlags: 0
@@ -38337,8 +38376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beac7864e825ede4b96ef0cacaa9918e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjetivoM: {fileID: 0}
+  ObjetivoM: {fileID: 654269374}
+  ObjetivoLLave: {fileID: 1385203767}
   dialogueTrigger: {fileID: 0}
+  dialogueTriggerl: {fileID: 1385203773}
   audioSourceKey: {fileID: 750367691}
   sonidoLlave: {fileID: 8300000, guid: f41f6937e5ec0c7419fbfdcfe252ac6b, type: 3}
   audioSourceCRISTAL: {fileID: 0}
@@ -40336,6 +40377,8 @@ GameObject:
   - component: {fileID: 1385203770}
   - component: {fileID: 1385203769}
   - component: {fileID: 1385203768}
+  - component: {fileID: 1385203774}
+  - component: {fileID: 1385203773}
   m_Layer: 0
   m_Name: Objetivo2
   m_TagString: Objetivo2
@@ -40432,8 +40475,68 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 101
+  m_RootOrder: 102
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!114 &1385203773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385203767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06abc36f1589a44790396d0db950d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Objetivo
+    sentences:
+    - Tiienes un nuevo Objetivo!
+    - Busca la llave para abrir la puerta.
+  PanelDialogo: {fileID: 170543704}
+--- !u!114 &1385203774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385203767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ceb207724c2244c8594c004f3a0c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntrarPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1385203773}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ExitPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1385203773}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDesactivar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1391086310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1325989589605275198, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
@@ -40518,7 +40621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 107
+  m_RootOrder: 108
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404308986 stripped
 GameObject:
@@ -42797,7 +42900,7 @@ Transform:
   - {fileID: 750367690}
   - {fileID: 295418412}
   m_Father: {fileID: 0}
-  m_RootOrder: 103
+  m_RootOrder: 104
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604926188
 GameObject:
@@ -43750,7 +43853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 108
+  m_RootOrder: 109
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1701214198 stripped
 GameObject:
@@ -44221,7 +44324,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 106
+  m_RootOrder: 107
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772710344 stripped
 GameObject:
@@ -45284,7 +45387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 100
+  m_RootOrder: 101
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &1856422597
 MonoBehaviour:
@@ -47704,7 +47807,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjetivoM: {fileID: 1856422591}
+  ObjetivoLLave: {fileID: 0}
   dialogueTrigger: {fileID: 1856422597}
+  dialogueTriggerl: {fileID: 0}
   audioSourceKey: {fileID: 0}
   sonidoLlave: {fileID: 0}
   audioSourceCRISTAL: {fileID: 295418413}
@@ -47773,7 +47878,7 @@ Transform:
   m_Children:
   - {fileID: 1405125102}
   m_Father: {fileID: 0}
-  m_RootOrder: 99
+  m_RootOrder: 100
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085560183 stripped
 GameObject:
