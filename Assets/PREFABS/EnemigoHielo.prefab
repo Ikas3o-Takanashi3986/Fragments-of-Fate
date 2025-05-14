@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 381329235033422623}
   - component: {fileID: 381329235033422616}
   - component: {fileID: 381329235033422617}
-  - component: {fileID: 2384395055388114515}
   m_Layer: 0
   m_Name: EnemigoHielo
   m_TagString: Untagged
@@ -255,19 +254,6 @@ MonoBehaviour:
   pointerbala: {fileID: 381329234865855945}
   tiempo: 2.3
   tiempoRestante: 2.3
---- !u!65 &2384395055388114515
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381329235033422618}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.53, y: 0.8, z: 0.52}
-  m_Center: {x: 0, y: 0.5, z: 0.029999996}
 --- !u!1001 &381329234923521456
 PrefabInstance:
   m_ObjectHideFlags: 0
