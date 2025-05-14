@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95d4b7bb7baf1b489b577fa41532993, type: 3}
+  m_Name: CristalFuego
+  m_EditorClassIdentifier: 
+  crystalName: 
+  icon: {fileID: 0}
+  visualPrefab: {fileID: 7187074444464202387, guid: 6001e7970f3e0854d8fc4588b4de13d4, type: 3}
+  projectilePrefab: {fileID: 4365224214515245143, guid: a1fdca2b4d20dc341840f4fcc0fc1af8, type: 3}
+  damage: 4
