@@ -13313,6 +13313,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1325989590634896524, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1325989590637310074, guid: d9f47228ee8b62e46958fc81b61e2230, type: 3}
       propertyPath: m_Layer
       value: 6

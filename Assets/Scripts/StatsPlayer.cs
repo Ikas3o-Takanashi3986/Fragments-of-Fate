@@ -149,8 +149,6 @@ public class StatsPlayer : MonoBehaviour
     void CargarEscena()
     {
         SceneManager.LoadScene(1);
-        Time.timeScale = 1;
-        vida = 100f;
     }
 
 }
