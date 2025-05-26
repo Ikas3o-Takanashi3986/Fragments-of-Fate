@@ -10,28 +10,42 @@ public class FadeInSceneStart : MonoBehaviour
 
     void Start()
     {
-        panelNegro.gameObject.SetActive(true);
+        panelNegro.raycastTarget = false;
+
 
         Color color = panelNegro.color;
         color.a = 1f;
         panelNegro.color = color;
 
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadeOutYVolver());
     }
 
-    IEnumerator FadeOut()
+    IEnumerator FadeOutYVolver()
     {
-        float tiempo = 0f;
-        Color colorOriginal = panelNegro.color;
 
+        float tiempo = 0f;
         while (tiempo < duracionFade)
         {
             tiempo += Time.deltaTime;
-            float alpha = 1f - Mathf.Clamp01(tiempo / duracionFade);
-            panelNegro.color = new Color(colorOriginal.r, colorOriginal.g, colorOriginal.b, alpha);
+            float alpha = Mathf.Lerp(1f, 0f, tiempo / duracionFade);
+            panelNegro.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
 
-        panelNegro.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+
+
+        tiempo = 0f;
+        while (tiempo < duracionFade)
+        {
+            tiempo += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, tiempo / duracionFade);
+            panelNegro.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+
+
+        StartCoroutine(FadeOutYVolver());
     }
 }

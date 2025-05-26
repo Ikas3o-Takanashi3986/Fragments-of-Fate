@@ -8,6 +8,7 @@ public class Cable : MonoBehaviour, IPointerClickHandler
     private bool Removido = false;
 
     public PanelFadeIn panelFadeIn;
+    public GameObject PanelFaded;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -22,6 +23,8 @@ public class Cable : MonoBehaviour, IPointerClickHandler
         if (cablesRestantes <= 0 && panelFadeIn != null)
         {
             panelFadeIn.MostrarConFade();
+
+            PanelFaded.SetActive(false);
         }
     }
 }
