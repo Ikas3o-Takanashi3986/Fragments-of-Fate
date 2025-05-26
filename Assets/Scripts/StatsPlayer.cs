@@ -93,19 +93,6 @@ public class StatsPlayer : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("HieloEnemigo"))
-        {
-            vida -= 10f;
-            Destroy(other.gameObject);
-            Debug.Log("Daño de HIELO recibido");
-
-            if (vida <= 0)
-            {
-                Time.timeScale = 0;
-                Debug.Log("Has perdido");
-            }
-        }
-
         if (other.CompareTag("AguaEnemigo"))
         {
             vida -= 5f;
@@ -117,6 +104,22 @@ public class StatsPlayer : MonoBehaviour
                 Time.timeScale = 0;
                 Debug.Log("Has perdido");
             }
+        }
+    }
+
+    public void RecibirDañoContinuo(float cantidad)
+    {
+        vida -= cantidad;
+        Debug.Log("Daño de HIELO por área. Vida: " + vida);
+        RevisarMuerte();
+    }
+
+    void RevisarMuerte()
+    {
+        if (vida <= 0)
+        {
+            Time.timeScale = 0;
+            Debug.Log("Has perdido");
         }
     }
 
