@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PerseguirClip: {fileID: 8300000, guid: fd2ef6f56411f7142b6f22f3180cddbc, type: 3}
   Source: {fileID: 7873249445848017884}
-  AtaqueClip: {fileID: 8300000, guid: e119c858d3aace040ba951bbd57a9958, type: 3}
+  AtaqueClip: {fileID: 8300000, guid: 7b1deb23d8f268142a2dc9128e9cde97, type: 3}
 --- !u!4 &7694927545293422921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ebcde51bfd9af645b32c54b90b3bd68, type: 3}

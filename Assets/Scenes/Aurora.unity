@@ -2686,6 +2686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2957064873026167113, guid: 28d74a0dbb7c7794b904e22a816a1e8f, type: 3}
+      propertyPath: AtaqueClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f1b63fb0763e6fa468dec23554e4ad86, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d74a0dbb7c7794b904e22a816a1e8f, type: 3}
 --- !u!1001 &2616466120932262285
@@ -2979,6 +2983,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7873249445848017885, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
+      propertyPath: AtaqueClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b1deb23d8f268142a2dc9128e9cde97, type: 3}
     - target: {fileID: 7873249447135580931, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
       propertyPath: PointerPlayer
       value: 
