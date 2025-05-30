@@ -69,6 +69,12 @@ public class EInteraction : MonoBehaviour
                 playerController.RecolectarObjeto();
                 cristalRecolectado = true;
 
+                if (dialogueTrigger != null && dialogueTrigger.PanelDialogoM2 != null)
+                {
+                    dialogueTrigger.PanelDialogoM2.SetActive(true);
+                    Debug.Log("PanelDialogoM2 activado desde EInteraction.");
+                }
+
                 if (sonidoCRISTAL != null && audioSourceCRISTAL != null)
                 {
                     audioSourceCRISTAL.PlayOneShot(sonidoCRISTAL);
