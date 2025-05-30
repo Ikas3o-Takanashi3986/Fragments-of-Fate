@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public GameObject PanelDialogo;
     public GameObject PanelDialogoM2;
+    public GameObject PanelDialogoM3;
 
     public void TriggerDialogue()
     {

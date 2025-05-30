@@ -12,6 +12,9 @@ public class EInteraction : MonoBehaviour
 
     public GameObject ObjetivoM;
     public GameObject ObjetivoLLave;
+    public GameObject PuertaOne;
+    public GameObject PuertaVisualOne;
+    public GameObject PuertaVisualOnePT2;
 
     public DialogueTrigger dialogueTrigger;
     public DialogueTrigger dialogueTriggerl;
@@ -85,6 +88,10 @@ public class EInteraction : MonoBehaviour
             {
                 playerController.RecolectarLlaves();
                 LlaveDeAcceso1Recolectada = true;
+
+                PuertaOne.SetActive(false);
+                PuertaVisualOne.SetActive(false);
+                PuertaVisualOnePT2.SetActive(true);
 
                 if (sonidoLlave != null && audioSourceKey != null)
                 {
