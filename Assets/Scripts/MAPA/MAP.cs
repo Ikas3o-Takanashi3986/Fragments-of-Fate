@@ -9,6 +9,9 @@ public class MAP : MonoBehaviour
     private float tiempoRequerido = 2f;
     private bool recolectado = false;
 
+    public AudioSource audioSource;
+    public AudioClip sonidoRecolectarMapa;
+
     void Update()
     {
         if (jugadorCerca)
@@ -56,6 +59,11 @@ public class MAP : MonoBehaviour
 
             if (recolectado)
             {
+                if (audioSource != null && sonidoRecolectarMapa != null)
+                {
+                    audioSource.PlayOneShot(sonidoRecolectarMapa);
+                }
+
                 Destroy(gameObject);
             }
         }
