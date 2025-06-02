@@ -27,7 +27,13 @@ public class ShooterCrystal : MonoBehaviour
         CrystalData current = inventory.GetActiveCrystal();
         if (current != null && current.projectilePrefab != null)
         {
-            Instantiate(current.projectilePrefab, firePoint.position, firePoint.rotation);
+            GameObject projectile = Instantiate(current.projectilePrefab, firePoint.position, firePoint.rotation);
+
+            Proyectile p = projectile.GetComponent<Proyectile>();
+            if (p != null)
+            {
+                p.SetDamage(current.proyectileDamage);
+            }
         }
     }
 }

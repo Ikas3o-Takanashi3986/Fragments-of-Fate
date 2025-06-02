@@ -11,5 +11,5 @@ public class CrystalData : ScriptableObject
     public Sprite icon;
     public GameObject visualPrefab;
     public GameObject projectilePrefab;
-    public float damage;
+    public float proyectileDamage;
 }

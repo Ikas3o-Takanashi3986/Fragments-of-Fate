@@ -8,9 +8,14 @@ public class Proyectile : MonoBehaviour
     public float damage;
 
 
+    public void SetDamage(float dmg)
+    {
+        damage = dmg;
+    }
+
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, 4f);
     }
 
