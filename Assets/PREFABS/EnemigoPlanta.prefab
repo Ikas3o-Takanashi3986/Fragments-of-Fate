@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 6769643007392220343}
   - component: {fileID: 6769643007392220342}
   - component: {fileID: 6769643007392220337}
-  - component: {fileID: 6769643007392220336}
+  - component: {fileID: 8514281465255011533}
+  - component: {fileID: 3610189069976523869}
+  - component: {fileID: 1510277150037885963}
   m_Layer: 0
   m_Name: EnemigoPlanta
   m_TagString: Untagged
@@ -103,7 +105,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6769643007392220336
+--- !u!114 &8514281465255011533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,18 +114,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 6769643007392220339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0326ec53892c4b846800eb06ba1e8df3, type: 3}
+  m_Script: {fileID: 11500000, guid: edb23fb90413b64498500b56acdd1000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 6769643007392220337}
   PointerPlayer: {fileID: 0}
-  LookRadius: 7
-  LookRadiusShoot: 5
-  enemya: {fileID: 0}
-  balaEnemigo: {fileID: 8567699446787125794, guid: 25605d82e0c5c5242990e0ca433d0d2d, type: 3}
-  pointerbala: {fileID: 6769643007666106099}
-  tiempo: 2.3
-  tiempoRestante: 2.3
+  LookRadius: 15
+  LookRadiusAtaque: 6.59
+  animatorEnemy: {fileID: 0}
+--- !u!114 &3610189069976523869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769643007392220339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b935c18e6a4a0204dae9a74befe91bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "da\xF1oPorSegundo": 5
+--- !u!135 &1510277150037885963
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769643007392220339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6769643007666106098
 GameObject:
   m_ObjectHideFlags: 0

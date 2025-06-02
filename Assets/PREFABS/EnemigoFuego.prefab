@@ -117,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Agent: {fileID: 3124528874791360099}
   PointerPlayer: {fileID: 0}
-  LookRadius: 7
-  LookRadiusShoot: 4
+  LookRadius: 15
+  LookRadiusShoot: 12
   enemya: {fileID: 0}
   balaEnemigo: {fileID: 867380134529941391, guid: 6f0361d9306a4d840a80aa38e7d004bc, type: 3}
   pointerbala: {fileID: 3124528874825902395}

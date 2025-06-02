@@ -6,6 +6,8 @@ public class M3Trigger : MonoBehaviour
 {
     public GameObject M3Text;
     private PlayerController playerController;
+    public GameObject LlaveTwo;
+
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class M3Trigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             M3Text.SetActive(true);
+            LlaveTwo.SetActive(true);
         }
 
     }
@@ -32,4 +35,6 @@ public class M3Trigger : MonoBehaviour
             M3Text.SetActive(false);
         }
     }
+
+
 }

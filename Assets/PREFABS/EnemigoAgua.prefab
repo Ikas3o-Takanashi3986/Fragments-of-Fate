@@ -143,7 +143,9 @@ GameObject:
   - component: {fileID: 7873249447135580928}
   - component: {fileID: 7873249447135580929}
   - component: {fileID: 7873249447135580930}
-  - component: {fileID: 7873249447135580931}
+  - component: {fileID: 4737752193706642379}
+  - component: {fileID: 3625609602534609651}
+  - component: {fileID: 4886240356248448718}
   m_Layer: 0
   m_Name: EnemigoAgua
   m_TagString: Untagged
@@ -233,7 +235,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7873249447135580931
+--- !u!114 &4737752193706642379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,18 +244,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 7873249447135580932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0326ec53892c4b846800eb06ba1e8df3, type: 3}
+  m_Script: {fileID: 11500000, guid: edb23fb90413b64498500b56acdd1000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 7873249447135580930}
   PointerPlayer: {fileID: 0}
-  LookRadius: 7
-  LookRadiusShoot: 5
-  enemya: {fileID: 0}
-  balaEnemigo: {fileID: 6705369232381956367, guid: df346092488cd8f4aab39bf128751c90, type: 3}
-  pointerbala: {fileID: 7873249446053446128}
-  tiempo: 2.5
-  tiempoRestante: 2.5
+  LookRadius: 15
+  LookRadiusAtaque: 7
+  animatorEnemy: {fileID: 0}
+--- !u!114 &3625609602534609651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873249447135580932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b935c18e6a4a0204dae9a74befe91bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "da\xF1oPorSegundo": 4
+--- !u!135 &4886240356248448718
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873249447135580932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.9
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7873249446441002658
 PrefabInstance:
   m_ObjectHideFlags: 0

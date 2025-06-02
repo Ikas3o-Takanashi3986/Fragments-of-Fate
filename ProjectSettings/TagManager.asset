@@ -19,6 +19,7 @@ TagManager:
   - PlantaEnemigo
   - HieloEnemigo
   - AguaEnemigo
+  - Objeto3
   layers:
   - Default
   - TransparentFX

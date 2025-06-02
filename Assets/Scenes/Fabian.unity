@@ -1006,6 +1006,8 @@ MonoBehaviour:
     sentences:
     - Recoge el Cristal de la memoria.
   PanelDialogo: {fileID: 1117280032}
+  PanelDialogoM2: {fileID: 0}
+  PanelDialogoM3: {fileID: 0}
 --- !u!114 &468272732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4e08e462b4724a8f772671f31fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourcePunto: {fileID: 0}
+  puntoClip: {fileID: 0}
   controlador: {fileID: 353468626}
 --- !u!114 &580585807
 MonoBehaviour:
@@ -1794,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 1900215619}
     - target: {fileID: 3124528874791360096, guid: f7a59aeb1410aa24c91be8362611ed4a, type: 3}
       propertyPath: LookRadiusShoot
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3124528874791360097, guid: f7a59aeb1410aa24c91be8362611ed4a, type: 3}
       propertyPath: m_RootOrder
@@ -2837,6 +2841,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjetivoM: {fileID: 0}
   ObjetivoLLave: {fileID: 0}
+  PuertaOne: {fileID: 0}
+  PuertaVisualOne: {fileID: 0}
+  PuertaVisualOnePT2: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueTriggerl: {fileID: 0}
   audioSourceKey: {fileID: 0}
@@ -3358,6 +3365,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4737752193706642379, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
+      propertyPath: LookRadius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737752193706642379, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
+      propertyPath: PointerPlayer
+      value: 
+      objectReference: {fileID: 1900215619}
+    - target: {fileID: 4737752193706642379, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
+      propertyPath: LookRadiusAtaque
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7873249445848017887, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
       propertyPath: m_Controller
       value: 
@@ -3366,10 +3385,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7873249447135580931, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
-      propertyPath: PointerPlayer
-      value: 
-      objectReference: {fileID: 1900215619}
     - target: {fileID: 7873249447135580932, guid: 036f0899002dd2a4ea1393430ee78c74, type: 3}
       propertyPath: m_Name
       value: EnemigoAgua
@@ -3595,6 +3610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4130538281340207829, guid: 28d74a0dbb7c7794b904e22a816a1e8f, type: 3}
+      propertyPath: PointerPlayer
+      value: 
+      objectReference: {fileID: 1900215619}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d74a0dbb7c7794b904e22a816a1e8f, type: 3}
 --- !u!1 &1459958868
@@ -4584,6 +4603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4e08e462b4724a8f772671f31fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourcePunto: {fileID: 0}
+  puntoClip: {fileID: 0}
   controlador: {fileID: 353468626}
 --- !u!114 &1738067575
 MonoBehaviour:
@@ -4737,10 +4758,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6769643007392220336, guid: 886a8549c6c54b34aaefe448449c5ea7, type: 3}
-      propertyPath: PointerPlayer
-      value: 
-      objectReference: {fileID: 1900215619}
     - target: {fileID: 6769643007392220339, guid: 886a8549c6c54b34aaefe448449c5ea7, type: 3}
       propertyPath: m_Name
       value: EnemigoPlanta
@@ -4789,6 +4806,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8514281465255011533, guid: 886a8549c6c54b34aaefe448449c5ea7, type: 3}
+      propertyPath: PointerPlayer
+      value: 
+      objectReference: {fileID: 1900215619}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886a8549c6c54b34aaefe448449c5ea7, type: 3}
 --- !u!1 &1781873900
@@ -5682,6 +5703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4e08e462b4724a8f772671f31fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourcePunto: {fileID: 0}
+  puntoClip: {fileID: 0}
   controlador: {fileID: 353468626}
 --- !u!1001 &1954699335
 PrefabInstance:
@@ -5817,6 +5840,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjetivoM: {fileID: 0}
   ObjetivoLLave: {fileID: 0}
+  PuertaOne: {fileID: 0}
+  PuertaVisualOne: {fileID: 0}
+  PuertaVisualOnePT2: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueTriggerl: {fileID: 0}
   audioSourceKey: {fileID: 0}
@@ -5950,6 +5976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4e08e462b4724a8f772671f31fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourcePunto: {fileID: 0}
+  puntoClip: {fileID: 0}
   controlador: {fileID: 353468626}
 --- !u!114 &2099117128
 MonoBehaviour:
@@ -6145,6 +6173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4e08e462b4724a8f772671f31fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourcePunto: {fileID: 0}
+  puntoClip: {fileID: 0}
   controlador: {fileID: 353468626}
 --- !u!114 &2128748228
 MonoBehaviour:

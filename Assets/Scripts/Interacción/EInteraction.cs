@@ -9,12 +9,25 @@ public class EInteraction : MonoBehaviour
     private float tiempoRequerido = 2f;
     private bool cristalRecolectado = false;
     private bool LlaveDeAcceso1Recolectada = false;
+    private bool LlaveDeAcceso2Recolectada = false;
 
     public GameObject ObjetivoM;
-    public GameObject ObjetivoLLave;
+
+    public GameObject ObjetivoLLave1;
+    public GameObject LlaveOne;
+
+    public GameObject ObjetivoLLave2;
+
+    public AudioSource audioSourceDoors;
+    public AudioClip sonidoDOOR;
+
     public GameObject PuertaOne;
     public GameObject PuertaVisualOne;
     public GameObject PuertaVisualOnePT2;
+
+    public GameObject PuertaTwo;
+    public GameObject PuertaVisualTwo;
+    public GameObject PuertaVisualTwoPT2;
 
     public DialogueTrigger dialogueTrigger;
     public DialogueTrigger dialogueTriggerl;
@@ -24,6 +37,10 @@ public class EInteraction : MonoBehaviour
 
     public AudioSource audioSourceCRISTAL;
     public AudioClip sonidoCRISTAL;
+
+    public GameObject M3Trigger;
+    public GameObject M3RedRoom;
+    public GameObject M2;
 
     public bool CristalRecolectado
     {
@@ -71,11 +88,13 @@ public class EInteraction : MonoBehaviour
             {
                 playerController.RecolectarObjeto();
                 cristalRecolectado = true;
+                LlaveOne.SetActive(true);
 
                 if (dialogueTrigger != null && dialogueTrigger.PanelDialogoM2 != null)
                 {
                     dialogueTrigger.PanelDialogoM2.SetActive(true);
                     Debug.Log("PanelDialogoM2 activado desde EInteraction.");
+
                 }
 
                 if (sonidoCRISTAL != null && audioSourceCRISTAL != null)
@@ -93,11 +112,37 @@ public class EInteraction : MonoBehaviour
                 PuertaVisualOne.SetActive(false);
                 PuertaVisualOnePT2.SetActive(true);
 
+
                 if (sonidoLlave != null && audioSourceKey != null)
                 {
                     audioSourceKey.PlayOneShot(sonidoLlave);
+                    audioSourceDoors.clip = sonidoDOOR;
+                    audioSourceDoors.Play();
                 }
+
+                M2.SetActive(false);
+
             }
+            else if (gameObject.CompareTag("Objeto3") && !LlaveDeAcceso2Recolectada)
+            {
+                playerController.RecolectarLlaves();
+                LlaveDeAcceso2Recolectada = true;
+
+                PuertaTwo.SetActive(false);
+                PuertaVisualTwo.SetActive(false);
+                PuertaVisualTwoPT2.SetActive(true);
+
+                if (sonidoLlave != null && audioSourceKey != null)
+                {
+                    audioSourceKey.PlayOneShot(sonidoLlave);
+                    audioSourceDoors.clip = sonidoDOOR;
+                    audioSourceDoors.Play();
+                }
+
+                M3RedRoom.SetActive(false);
+                M3Trigger.SetActive(false);
+            }
+
         }
 
         if (dialogueTrigger != null)
@@ -109,9 +154,9 @@ public class EInteraction : MonoBehaviour
         {
             ObjetivoM.SetActive(false);
         }
-        else if (gameObject.CompareTag("Objeto2") && ObjetivoLLave != null)
+        else if (gameObject.CompareTag("Objeto2") && ObjetivoLLave1 != null)
         {
-            ObjetivoLLave.SetActive(false);
+            ObjetivoLLave1.SetActive(false);
         }
 
 

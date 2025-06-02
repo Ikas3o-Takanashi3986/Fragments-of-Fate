@@ -249,8 +249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Agent: {fileID: 381329235033422616}
   PointerPlayer: {fileID: 0}
-  LookRadius: 8
-  LookRadiusAtaque: 4
+  LookRadius: 9
+  LookRadiusAtaque: 5
   animatorEnemy: {fileID: 0}
 --- !u!135 &6421844644326970329
 SphereCollider:
@@ -263,7 +263,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6
+  m_Radius: 1.98
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3981572795909880577
 MonoBehaviour:
