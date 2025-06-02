@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     public GameObject mapaDisplayContenedor3D;
     public GameObject mapa1Modelo3D;
     public GameObject mapa2Modelo3D;
+    public GameObject Luz;
+
+    public GameObject Bloqueo1;
+
     private bool mapaVisible = false;
 
     void Update()
@@ -47,6 +51,8 @@ public class PlayerController : MonoBehaviour
                     if (mapa2Recolectado && mapa2Modelo3D != null)
                         mapa2Modelo3D.SetActive(true);
 
+                    Luz.SetActive(true);
+
                     if (audioSourceMapa != null && sonidoAbrirMapa != null)
                         audioSourceMapa.PlayOneShot(sonidoAbrirMapa);
                 }
@@ -54,6 +60,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (mapa1Modelo3D != null) mapa1Modelo3D.SetActive(false);
                     if (mapa2Modelo3D != null) mapa2Modelo3D.SetActive(false);
+
+                    Luz.SetActive(false);
 
                     if (audioSourceMapa != null && sonidoCerrarMapa != null)
                         audioSourceMapa.PlayOneShot(sonidoCerrarMapa);
@@ -139,6 +147,9 @@ public class PlayerController : MonoBehaviour
             {
                 Mapa1.SetActive(false);
                 mapa1Recolectado = true;
+
+                Bloqueo1.SetActive(false);
+
                 Debug.Log("Mapa 1 recolectado.");
             }
         }

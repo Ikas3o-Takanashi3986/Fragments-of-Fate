@@ -85,5 +85,4 @@ public class MAP : MonoBehaviour
         }
     }
 
-    //parte de UI aun en proceso ya que no hay UI en el juego*
 }
