@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298295486188586936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.025, y: 1.429, z: 0.445}
+  m_LocalPosition: {x: -0.024998441, y: 1.4289999, z: 0.4450002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 7298295486394426783}
   velocidad: 5
+  velocidadCorrer: 0
   VelocidadGravedad: {x: 0, y: 0, z: 0}
   Gravedad: -9.81
   GroundCheck: {fileID: 7298295487603767753}
@@ -212,11 +213,18 @@ MonoBehaviour:
     m_Bits: 64
   Grounded: 1
   Chequeo: 0
+  isDodging: 0
   HeightJump: 0.7
   animator: {fileID: 0}
   isJump: 0
   IsGround: 0
   isFalling: 0
+  audioSource: {fileID: 0}
+  audioSourceRun: {fileID: 0}
+  "audioSourceCay\xF3": {fileID: 0}
+  caminarClip: {fileID: 0}
+  correrClip: {fileID: 0}
+  "cay\xF3Clip": {fileID: 0}
 --- !u!114 &4685800800938505539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70822555b4550943879a904c7bb6cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Proyectil: {fileID: 0}
 --- !u!114 &4685800800938505538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,8 +251,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LlaveR: {fileID: 0}
   LlaveA: {fileID: 0}
+  Object1: {fileID: 0}
+  Object2: {fileID: 0}
+  Mapa1: {fileID: 0}
+  Mapa2: {fileID: 0}
+  Llave1: {fileID: 0}
   llaveRRecolectada: 0
   llaveARecolectada: 0
+  CristalMRecolectado: 0
+  objeto2Recolectado: 0
+  mapa1Recolectado: 0
+  mapa2Recolectado: 0
+  LlaveDeAcceso1Recolectada: 0
+  audioSourceMapa: {fileID: 0}
+  sonidoAbrirMapa: {fileID: 0}
+  sonidoCerrarMapa: {fileID: 0}
+  mapaDisplayContenedor3D: {fileID: 0}
+  mapa1Modelo3D: {fileID: 0}
+  mapa2Modelo3D: {fileID: 0}
 --- !u!1 &7298295486901665353
 GameObject:
   m_ObjectHideFlags: 0
