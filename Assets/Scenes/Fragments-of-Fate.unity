@@ -78531,7 +78531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426782, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 396.99
+      value: 371.1
       objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426782, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -78539,7 +78539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426782, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 448.84
+      value: 387.6
       objectReference: {fileID: 0}
     - target: {fileID: 7298295486394426782, guid: 2fa7a90e35e426142b921d098ae43dc4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78613,16 +78613,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33a08cab47c0294a8839787fd4bca25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  screenBlack: {fileID: 0}
+  anim: {fileID: 4685800801444896909}
+  screenBlack: {fileID: 2100895035}
   delayBeforeBlink: 3
   numberOfBlinks: 3
   blinkFadeDuration: 0.5
   blinkInterval: 0.3
   animationName: DesmayoTotal
-  despertarController: {fileID: 0}
+  despertarController: {fileID: 1855657084}
   tiempoEnNegro: 60
-  canvasDesmayo: {fileID: 0}
+  canvasDesmayo: {fileID: 2100895033}
 --- !u!95 &4685800801444896909
 Animator:
   serializedVersion: 4
