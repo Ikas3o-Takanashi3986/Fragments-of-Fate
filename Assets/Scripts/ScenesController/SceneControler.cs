@@ -29,6 +29,7 @@ public class SceneControler : MonoBehaviour
     public void Escena1()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
 
     }
 

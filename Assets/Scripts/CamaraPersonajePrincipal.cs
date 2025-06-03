@@ -39,9 +39,19 @@ public class CamaraPersonajePrincipal : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             cursorLibre = !cursorLibre;
+            SetCursorState(cursorLibre);
         }
+    }
 
-        if (cursorLibre)
+    public void LiberarMouse()
+    {
+        cursorLibre = true;
+        SetCursorState(true);
+    }
+
+    private void SetCursorState(bool libre)
+    {
+        if (libre)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;

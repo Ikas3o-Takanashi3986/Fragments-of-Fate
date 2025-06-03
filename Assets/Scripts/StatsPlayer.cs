@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class StatsPlayer : MonoBehaviour
 {
-
-
     public static StatsPlayer Instance;
+
+    private CamaraPersonajePrincipal camaraScript;
 
     public static float vida = 100f;
 
@@ -17,6 +17,7 @@ public class StatsPlayer : MonoBehaviour
     private float tiempoDuracion = 4f;
     private float temporizadorDaño = 0f;
     private float temporizadorDuracion = 0f;
+    public GameObject PanelLOSE;
 
     public GameObject Load;
     public float tiempoEspera = 60f;
@@ -31,7 +32,9 @@ public class StatsPlayer : MonoBehaviour
 
     void Start()
     {
-        
+
+        camaraScript = FindObjectOfType<CamaraPersonajePrincipal>();
+
     }
 
 
@@ -50,6 +53,13 @@ public class StatsPlayer : MonoBehaviour
 
                 if (vida <= 0)
                 {
+                    PanelLOSE.SetActive(true);
+
+                    if (camaraScript != null)
+                    {
+                        camaraScript.LiberarMouse();
+                    }
+
                     Time.timeScale = 0;
                     Debug.Log("Has perdido");
                 }
@@ -88,6 +98,13 @@ public class StatsPlayer : MonoBehaviour
 
             if (vida <= 0)
             {
+                PanelLOSE.SetActive(true);
+
+                if (camaraScript != null)
+                {
+                    camaraScript.LiberarMouse();
+                }
+
                 Time.timeScale = 0;
                 Debug.Log("Has perdido");
             }
@@ -101,6 +118,13 @@ public class StatsPlayer : MonoBehaviour
 
             if (vida <= 0)
             {
+                PanelLOSE.SetActive(true);
+
+                if (camaraScript != null)
+                {
+                    camaraScript.LiberarMouse();
+                }
+
                 Time.timeScale = 0;
                 Debug.Log("Has perdido");
             }
@@ -118,6 +142,13 @@ public class StatsPlayer : MonoBehaviour
     {
         if (vida <= 0)
         {
+            PanelLOSE.SetActive(true);
+
+            if (camaraScript != null)
+            {
+                camaraScript.LiberarMouse();
+            }
+
             Time.timeScale = 0;
             Debug.Log("Has perdido");
         }
@@ -152,6 +183,15 @@ public class StatsPlayer : MonoBehaviour
     void CargarEscena()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        vida = 100f;
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1;
+        vida = 100f;
     }
 
 }
