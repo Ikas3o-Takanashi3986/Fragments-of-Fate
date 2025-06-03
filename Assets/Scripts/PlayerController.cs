@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public GameObject mapa1Modelo3D;
     public GameObject mapa2Modelo3D;
     public GameObject Luz;
+    public GameObject Morgue;
 
     public GameObject Bloqueo1;
 
@@ -149,6 +150,7 @@ public class PlayerController : MonoBehaviour
                 mapa1Recolectado = true;
 
                 Bloqueo1.SetActive(false);
+                Morgue.SetActive(true);
 
                 Debug.Log("Mapa 1 recolectado.");
             }

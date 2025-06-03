@@ -9,6 +9,8 @@ public class MAP : MonoBehaviour
     private float tiempoRequerido = 2f;
     private bool recolectado = false;
 
+    public GameObject Objetivo3;
+
     public AudioSource audioSource;
     public AudioClip sonidoRecolectarMapa;
 
@@ -49,6 +51,15 @@ public class MAP : MonoBehaviour
                 playerController.RecolectarMapa1();
                 recolectado = true;
                 Debug.Log("¡Pieza del Mapa 1 recolectada!");
+
+
+                GameObject panelDialogoM = GameObject.Find("CanvasObjetivosM3enAdelante/DialogoM");
+                if (panelDialogoM != null) panelDialogoM.SetActive(false);
+
+                Objetivo3.SetActive(false);
+
+                DialogueManagerM managerM = FindObjectOfType<DialogueManagerM>();
+                if (managerM != null) managerM.ForzarFinDialogo();
             }
             else if (gameObject.CompareTag("Mapa2") && !playerController.mapa2Recolectado)
             {
