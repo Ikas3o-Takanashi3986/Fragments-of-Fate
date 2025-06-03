@@ -7,61 +7,60 @@ public class DespertarController : MonoBehaviour
 {
     public Image pantallaNegra;              
     public Transform jugador;                
-    public Transform puntoDeReaparicion;    
-    public GameObject canvasDespertar;      
+    public Transform puntoDeReaparicion;   
+    public float delayAntesParpadeos = 3f;     
 
     public int cantidadParpadeos = 3;
     public float duracionParpadeo = 0.4f;
     public float intervaloEntreParpadeos = 0.3f;
 
+    public ControlCamaraDesmayo controladorCamara;
+
     void Start()
     {
-        
-        if (canvasDespertar != null)
-            canvasDespertar.SetActive(false);
+        if (pantallaNegra != null)
+            pantallaNegra.gameObject.SetActive(false);
     }
 
     public void IniciarDespertar()
     {
-        if (canvasDespertar != null)
-            canvasDespertar.SetActive(true);
-
-        
+        pantallaNegra.gameObject.SetActive(true);
         pantallaNegra.color = new Color(0, 0, 0, 1);
-
         StartCoroutine(SecuenciaDespertar());
     }
 
     IEnumerator SecuenciaDespertar()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(delayAntesParpadeos);
 
-       
+        
         if (jugador != null && puntoDeReaparicion != null)
         {
             jugador.position = puntoDeReaparicion.position;
             jugador.rotation = puntoDeReaparicion.rotation;
         }
 
-       
+        
         yield return StartCoroutine(Fade(1f, 0f, duracionParpadeo));
 
         
         for (int i = 0; i < cantidadParpadeos; i++)
         {
             yield return new WaitForSeconds(intervaloEntreParpadeos);
-
-            yield return StartCoroutine(Fade(0f, 1f, duracionParpadeo)); 
+            yield return StartCoroutine(Fade(0f, 1f, duracionParpadeo)); // cerrar ojos
             yield return new WaitForSeconds(intervaloEntreParpadeos);
-            yield return StartCoroutine(Fade(1f, 0f, duracionParpadeo)); 
+            yield return StartCoroutine(Fade(1f, 0f, duracionParpadeo)); // abrir ojos
         }
 
-       
+        
         yield return StartCoroutine(Fade(1f, 0f, 1.5f));
 
-       
-        if (canvasDespertar != null)
-            canvasDespertar.SetActive(false);
+        if (pantallaNegra != null)
+            pantallaNegra.gameObject.SetActive(false);
+
+        
+        if (controladorCamara != null)
+            controladorCamara.RestaurarCamaraPrincipal();
     }
 
     IEnumerator Fade(float fromAlpha, float toAlpha, float duracion)
@@ -72,9 +71,11 @@ public class DespertarController : MonoBehaviour
         {
             tiempo += Time.deltaTime;
             float alpha = Mathf.Lerp(fromAlpha, toAlpha, tiempo / duracion);
-            pantallaNegra.color = new Color(0, 0, 0, alpha);
+            if (pantallaNegra != null)
+                pantallaNegra.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
-        pantallaNegra.color = new Color(0, 0, 0, toAlpha);
+        if (pantallaNegra != null)
+            pantallaNegra.color = new Color(0, 0, 0, toAlpha);
     }
 }
