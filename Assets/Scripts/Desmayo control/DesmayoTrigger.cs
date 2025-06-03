@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DesmayoTrigger : MonoBehaviour
 {
-    public DesmayoController desmayoController;
+    public ControlCamaraDesmayo controlCamaraDesmayo;
+
+
+    private bool yaDesmayo = false;
 
     private void OnTriggerEnter(Collider other)
-
-
     {
-        if (other.CompareTag("Player"))
+        if (!yaDesmayo && other.CompareTag("Player"))
         {
-            desmayoController.IniciarSecuenciaCompleta();
+            yaDesmayo = true;
+            controlCamaraDesmayo.IniciarSecuenciaCompleta();
         }
     }
 }
