@@ -13,10 +13,12 @@ public class ControlCamaraDesmayo : MonoBehaviour
     public float tiempoParpadeo = 0.4f;
     public int cantidadParpadeos = 3;
 
-    public float tiempoNegroPostDesmayo = 20f; // Tiempo en negro tras parpadeos antes de cambiar cámara
+    public float tiempoNegroPostDesmayo = 20f; 
 
-    public DespertarController despertarController; // Referencia para activar parpadeo despertar
-
+    public DespertarController despertarController; 
+    
+    public GameObject jugador;
+    
     private Animator animador;
     private bool inicioParpadeoDesmayo = false;
 
@@ -34,49 +36,54 @@ public class ControlCamaraDesmayo : MonoBehaviour
 
     public void IniciarSecuenciaCompleta()
     {
+        
+        camaraDesmayo.transform.SetPositionAndRotation(
+            camaraPrincipal.transform.position,
+            camaraPrincipal.transform.rotation
+        );
+        camaraDesmayo.transform.parent = null;
+
+        
+        if (jugador != null)
+            jugador.SetActive(false);
+
         StartCoroutine(SecuenciaDesmayo());
     }
 
     IEnumerator SecuenciaDesmayo()
     {
-        // Activar cámara desmayo, desactivar principal
         camaraPrincipal.gameObject.SetActive(false);
         camaraDesmayo.gameObject.SetActive(true);
 
         pantallaNegra.gameObject.SetActive(true);
-        pantallaNegra.color = new Color(0, 0, 0, 0); // transparente al inicio
+        pantallaNegra.color = new Color(0, 0, 0, 0);
 
-        // Reproducir animación desmayo (que en frame 261 ejecuta evento ComenzarParpadeo)
         if (animador != null)
             animador.Play("DesmayoTotal");
 
-        // Esperar evento Animation Event para iniciar parpadeos
         while (!inicioParpadeoDesmayo)
             yield return null;
 
-        // Ejecutar parpadeos de desmayo (fade in/out)
         yield return StartCoroutine(ParpadeoPantalla());
 
-        // Pantalla queda completamente negra
         pantallaNegra.color = new Color(0, 0, 0, 1);
 
-        // Tiempo en negro antes de cambiar cámara y teletransportar jugador
         yield return new WaitForSeconds(tiempoNegroPostDesmayo);
 
-        // Cambiar a cámara principal
+        
+        if (jugador != null)
+            jugador.SetActive(true);
+
         camaraPrincipal.gameObject.SetActive(true);
         camaraDesmayo.gameObject.SetActive(false);
 
-        // Mantener pantalla negra visible
         pantallaNegra.color = new Color(0, 0, 0, 1);
         pantallaNegra.gameObject.SetActive(true);
 
-        // Iniciar parpadeo de despertar en cámara principal (despertarController)
         if (despertarController != null)
             despertarController.IniciarDespertar();
     }
 
-    // Método llamado por Animation Event al frame 261
     public void ComenzarParpadeo()
     {
         inicioParpadeoDesmayo = true;
@@ -86,13 +93,12 @@ public class ControlCamaraDesmayo : MonoBehaviour
     {
         for (int i = 0; i < cantidadParpadeos; i++)
         {
-            yield return StartCoroutine(FadePantalla(false)); // transparente
+            yield return StartCoroutine(FadePantalla(false));
             yield return new WaitForSeconds(tiempoParpadeo);
-            yield return StartCoroutine(FadePantalla(true));  // negro
+            yield return StartCoroutine(FadePantalla(true));
             yield return new WaitForSeconds(tiempoParpadeo);
         }
 
-        // Finaliza con pantalla negra
         yield return StartCoroutine(FadePantalla(true));
     }
 
@@ -112,7 +118,6 @@ public class ControlCamaraDesmayo : MonoBehaviour
         pantallaNegra.color = new Color(0, 0, 0, fin);
     }
 
-    // Método para restaurar cámara principal al final de despertar si quieres
     public void RestaurarCamaraPrincipal()
     {
         camaraPrincipal.gameObject.SetActive(true);
