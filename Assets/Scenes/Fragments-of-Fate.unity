@@ -3477,7 +3477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dca009d78f2f66418fc0532c0432f6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.847015
+      value: -39.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dca009d78f2f66418fc0532c0432f6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3485,7 +3485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dca009d78f2f66418fc0532c0432f6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.864624
+      value: -18.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4dca009d78f2f66418fc0532c0432f6c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7700,6 +7700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPromptPrefab: {fileID: 7137995773553823011, guid: 864eaea6c9749f349a78fd41dd0b7f3d, type: 3}
+  objectName: Objeto
+  actionText: Presiona E para ver
 --- !u!1 &404685567
 GameObject:
   m_ObjectHideFlags: 0
@@ -39164,6 +39166,34 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -4.96
       objectReference: {fileID: 0}
+    - target: {fileID: 1725760458462789823, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458462789823, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458462789823, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458482243103, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458482243103, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.123917
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458482243103, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.123917
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725760458482243103, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.123917
+      objectReference: {fileID: 0}
     - target: {fileID: 7963233226934466084, guid: e6d31aea749645f4c8b162676eb5cd76, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -59210,6 +59240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPromptPrefab: {fileID: 7963550446090620430, guid: a474731f693bea041b599541bfbee477, type: 3}
+  objectName: Objeto
+  actionText: Presiona E para ver
 --- !u!1 &1280129684
 GameObject:
   m_ObjectHideFlags: 0
@@ -65723,6 +65755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404685568}
     m_Modifications:
+    - target: {fileID: 3994301304083750925, guid: 6001e7970f3e0854d8fc4588b4de13d4, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6705572397757677636, guid: 6001e7970f3e0854d8fc4588b4de13d4, type: 3}
       propertyPath: m_Radius
       value: 21.16
@@ -76171,7 +76207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1614249519366581329, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.269745
+      value: -7.278
       objectReference: {fileID: 0}
     - target: {fileID: 1614249519366581329, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -76179,7 +76215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1614249519366581329, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.956207
+      value: 42.975
       objectReference: {fileID: 0}
     - target: {fileID: 1614249519366581329, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -76216,6 +76252,14 @@ PrefabInstance:
     - target: {fileID: 5731609281307566142, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
       propertyPath: m_Radius
       value: 40.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995069544208769733, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834855846245495762, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344514c9f0f094d4d88be08f5990976e, type: 3}

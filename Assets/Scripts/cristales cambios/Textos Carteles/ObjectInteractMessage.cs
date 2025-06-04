@@ -19,14 +19,13 @@ public class ObjectInteractMessage : MonoBehaviour
 
     void Start()
     {
-        
         if (uiPromptPrefab)
         {
             promptInstance = Instantiate(uiPromptPrefab);
             promptInstance.transform.SetParent(GameObject.Find("Canvas").transform, false);
             promptInstance.SetActive(false);
 
-            
+            // Asignar texto
             TextMeshProUGUI[] texts = promptInstance.GetComponentsInChildren<TextMeshProUGUI>();
             if (texts.Length >= 2)
             {
@@ -35,7 +34,6 @@ public class ObjectInteractMessage : MonoBehaviour
             }
         }
 
-        
         if (infoPanelPrefab)
         {
             infoPanelInstance = Instantiate(infoPanelPrefab);
@@ -49,21 +47,34 @@ public class ObjectInteractMessage : MonoBehaviour
 
     void Update()
     {
+        
         if (playerInRange && !infoShown && Input.GetKeyDown(KeyCode.E))
         {
             ShowInfo();
         }
 
+        
         if (infoShown && Input.GetKeyDown(KeyCode.R))
         {
             CloseInfo();
         }
 
         
-        if (promptInstance != null && playerInRange && !infoShown && player != null)
+        if (promptInstance != null && playerInRange && !infoShown)
         {
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2f);
-            promptInstance.transform.position = screenPos;
+            Vector3 offset = new Vector3(0, 0.3f, 0); 
+            Vector3 worldPos = transform.position + offset;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+            if (screenPos.z > 0)
+            {
+                promptInstance.transform.position = screenPos;
+                promptInstance.SetActive(true);
+            }
+            else
+            {
+                promptInstance.SetActive(false); 
+            }
         }
     }
 
@@ -73,6 +84,7 @@ public class ObjectInteractMessage : MonoBehaviour
         {
             playerInRange = true;
             player = other.transform;
+
             if (promptInstance != null && !infoShown)
                 promptInstance.SetActive(true);
         }
@@ -84,6 +96,7 @@ public class ObjectInteractMessage : MonoBehaviour
         {
             playerInRange = false;
             player = null;
+
             if (promptInstance != null)
                 promptInstance.SetActive(false);
         }
@@ -96,13 +109,13 @@ public class ObjectInteractMessage : MonoBehaviour
         if (promptInstance) Destroy(promptInstance);
         if (infoPanelInstance) infoPanelInstance.SetActive(true);
 
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
     }
 
     void CloseInfo()
     {
         if (infoPanelInstance) Destroy(infoPanelInstance);
-        Time.timeScale = 1f; 
-        Destroy(this); 
+        Time.timeScale = 1f;
+        Destroy(this);
     }
 }

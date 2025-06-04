@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class ObjectSimpleInfo : MonoBehaviour
 {
-    public GameObject uiPromptPrefab;  
-    private GameObject promptInstance;
+    public GameObject uiPromptPrefab;
+    public string objectName = "Objeto";
+    public string actionText = "Presiona E para ver";
 
+    private GameObject promptInstance;
     private bool playerInRange = false;
     private Transform player;
 
@@ -14,10 +18,16 @@ public class ObjectSimpleInfo : MonoBehaviour
     {
         if (uiPromptPrefab)
         {
-            
-            promptInstance = Instantiate(uiPromptPrefab, transform.position + Vector3.up * 2f, Quaternion.identity);
+            promptInstance = Instantiate(uiPromptPrefab);
             promptInstance.transform.SetParent(GameObject.Find("Canvas").transform, false);
             promptInstance.SetActive(false);
+
+            TextMeshProUGUI[] texts = promptInstance.GetComponentsInChildren<TextMeshProUGUI>();
+            if (texts.Length >= 2)
+            {
+                texts[0].text = objectName;
+                texts[1].text = actionText;
+            }
         }
     }
 
@@ -25,14 +35,25 @@ public class ObjectSimpleInfo : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            HideMessage();
+            if (promptInstance) Destroy(promptInstance);
+            Destroy(this);
         }
 
-       
         if (promptInstance != null && playerInRange && player != null)
         {
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2f);
-            promptInstance.transform.position = screenPos;
+            Vector3 offset = new Vector3(0, 0.3f, 0); 
+            Vector3 worldPos = transform.position + offset;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+            if (screenPos.z > 0)
+            {
+                promptInstance.transform.position = screenPos;
+                promptInstance.SetActive(true);
+            }
+            else
+            {
+                promptInstance.SetActive(false); 
+            }
         }
     }
 
@@ -40,8 +61,9 @@ public class ObjectSimpleInfo : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = other.transform;
             playerInRange = true;
+            player = other.transform;
+
             if (promptInstance != null)
                 promptInstance.SetActive(true);
         }
@@ -53,17 +75,9 @@ public class ObjectSimpleInfo : MonoBehaviour
         {
             playerInRange = false;
             player = null;
+
             if (promptInstance != null)
                 promptInstance.SetActive(false);
         }
-    }
-
-    void HideMessage()
-    {
-        if (promptInstance != null)
-        {
-            Destroy(promptInstance); 
-        }
-        Destroy(this); // Elimina el script para que no vuelva a activarse
     }
 }

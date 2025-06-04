@@ -16,7 +16,7 @@ public class CrystalPickup : MonoBehaviour
 
         if (uiPromptPrefab)
         {
-            promptInstance = Instantiate(uiPromptPrefab, transform.position + Vector3.up * 2f, Quaternion.identity);
+            promptInstance = Instantiate(uiPromptPrefab, transform.position + Vector3.up * 0.3f, Quaternion.identity);
             promptInstance.transform.SetParent(GameObject.Find("Canvas").transform, false);
             promptInstance.SetActive(false);
         }
@@ -31,7 +31,7 @@ public class CrystalPickup : MonoBehaviour
 
         if (promptInstance != null && playerInRange && player != null)
         {
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2f);
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 0.3f);
             promptInstance.transform.position = screenPos;
         }
     }
