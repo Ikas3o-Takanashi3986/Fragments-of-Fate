@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac0d6d385fb31c44a3cbcdc7bf41b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PanelLOSE: {fileID: 0}
   Load: {fileID: 316284199}
   tiempoEspera: 2
   barraCarga: {fileID: 900952355}
