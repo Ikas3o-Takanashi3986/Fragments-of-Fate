@@ -22,7 +22,8 @@ public class MesaActivacionBomba : MonoBehaviour
     public ButtonLamp botonLampara;             
 
     
-    public GameObject textoPresionarE;         
+    public GameObject textoPresionarE;
+    public GameObject pasoProhibido;
 
     private bool bombaActivada = false;
     private float tiempoRestante = 900f;       
@@ -35,6 +36,7 @@ public class MesaActivacionBomba : MonoBehaviour
     {
         if (jugadorDentro && Input.GetKeyDown(KeyCode.E) && !bombaActivada)
         {
+            pasoProhibido.SetActive(false);
             bombaActivada = true;
             ActivarEventos();
 
