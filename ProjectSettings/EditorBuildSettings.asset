@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fragments-of-Fate.unity
     guid: 3c100eb1ae5cfba418835e7d4d8ba3af
+  - enabled: 1
+    path: Assets/Scenes/OUTRO.unity
+    guid: 2c4be11c359135046b714198d76326ae
   - enabled: 0
     path: Assets/Scenes/Fabian.unity
     guid: a130628319f0a814aaf223a5cbc7aded
