@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class ActivarDesmayoConFinal : MonoBehaviour
 {
@@ -73,7 +73,6 @@ public class ActivarDesmayoConFinal : MonoBehaviour
         panelNegro.alpha = 1f;
         desmayoAnimator.speed = 0f;
 
-        SceneManager.LoadScene(3);
     }
 
     System.Collections.IEnumerator SecuenciaParpadeo()
