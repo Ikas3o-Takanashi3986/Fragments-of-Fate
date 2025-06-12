@@ -103,10 +103,10 @@ public class ExplosionEventCaller : MonoBehaviour
         if (musicaDeFondo == null)
             yield break;
 
-        audioSource.clip = musicaDeFondo;
-        audioSource.loop = true;
-        audioSource.volume = 0f;
-        audioSource.Play();
+        audioLoopSource.clip = musicaDeFondo;
+        audioLoopSource.loop = true;
+        audioLoopSource.volume = 0f;
+        audioLoopSource.Play();
 
         float duracion = 2f; 
         float tiempo = 0f;
@@ -114,10 +114,11 @@ public class ExplosionEventCaller : MonoBehaviour
         while (tiempo < duracion)
         {
             tiempo += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(0f, volumenSonidoFondoObjetivo, tiempo / duracion);
+            audioLoopSource.volume = Mathf.Lerp(0f, volumenSonidoFondoObjetivo, tiempo / duracion);
             yield return null;
         }
-        audioSource.volume = volumenSonidoFondoObjetivo;
+
+        audioLoopSource.volume = volumenSonidoFondoObjetivo;
     }
 
     IEnumerator FadeOutSonidoFondo()
@@ -129,17 +130,18 @@ public class ExplosionEventCaller : MonoBehaviour
     {
         float duracion = 2f;
         float tiempo = 0f;
-        float volumenInicial = audioSource.volume;
+        float volumenInicial = audioLoopSource.volume;
 
         while (tiempo < duracion)
         {
             tiempo += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracion);
+            audioLoopSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracion);
             yield return null;
         }
 
-        audioSource.Stop();
-        audioSource.volume = volumenSonidoFondoObjetivo;
+        audioLoopSource.Stop();
+        audioLoopSource.volume = volumenSonidoFondoObjetivo;
+
         SceneManager.LoadScene(escena);
     }
 
