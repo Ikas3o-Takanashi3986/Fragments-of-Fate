@@ -68,12 +68,7 @@ public class ActivarDesmayoConFinal : MonoBehaviour
     }
 
 
-    public void ActivarPanelFinal()
-    {
-        panelNegro.alpha = 1f;
-        desmayoAnimator.speed = 0f;
-
-    }
+    
 
     System.Collections.IEnumerator SecuenciaParpadeo()
     {
@@ -86,7 +81,7 @@ public class ActivarDesmayoConFinal : MonoBehaviour
         
         yield return Parpadear(3, 0.5f);
 
-        // Dejar pantalla negra
+        
         panelNegro.alpha = 1;
     }
 

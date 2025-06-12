@@ -269,6 +269,9 @@ MonoBehaviour:
   mapaDisplayContenedor3D: {fileID: 0}
   mapa1Modelo3D: {fileID: 0}
   mapa2Modelo3D: {fileID: 0}
+  Luz: {fileID: 0}
+  Morgue: {fileID: 0}
+  Bloqueo1: {fileID: 0}
 --- !u!1 &7298295486901665353
 GameObject:
   m_ObjectHideFlags: 0

@@ -2768,8 +2768,36 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 7.85
+    functionName: ReproducirSonidoMalestar
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 22.066668
     functionName: IniciarParpadeo
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.05
+    functionName: ReproducirSonidoGolpe
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.366667
+    functionName: FadeInSonidoFondo
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 40
+    functionName: FadeOutSonidoFondo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
