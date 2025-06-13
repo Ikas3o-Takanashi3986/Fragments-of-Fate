@@ -6,8 +6,9 @@ public class DesmayoTrigger : MonoBehaviour
 {
     public ControlCamaraDesmayo controlCamaraDesmayo;
     public GameObject enemigoPrefab;
-    public float distanciaDetras = 1.5f;
-    public Vector3 ajusteAltura = new Vector3(0, 0.5f, 0);
+    public Transform puntoDeSpawn;
+
+  
 
     private bool yaDesmayo = false;
 
@@ -17,15 +18,27 @@ public class DesmayoTrigger : MonoBehaviour
         {
             yaDesmayo = true;
 
-            Transform jugador = other.transform;
-            Vector3 posicionDetras = jugador.position - jugador.forward * distanciaDetras + ajusteAltura;
-            GameObject enemigo = Instantiate(enemigoPrefab, posicionDetras, Quaternion.LookRotation(jugador.position - posicionDetras));
+            Quaternion rotacion = Quaternion.Euler(0f, 0f, 0f);
+            GameObject enemigo = Instantiate(enemigoPrefab, puntoDeSpawn.position, rotacion);
 
+            // Activar animación si existe
             Animator anim = enemigo.GetComponent<Animator>();
             if (anim != null)
+            {
                 anim.SetTrigger("Attack");
+                Debug.Log("Animación de ataque activada.");
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró Animator en el enemigo instanciado.");
+            }
 
-            controlCamaraDesmayo.IniciarSecuenciaCompleta();
+            // Inicia la secuencia de desmayo
+            if (controlCamaraDesmayo != null)
+                controlCamaraDesmayo.IniciarSecuenciaCompleta();
+
+            // Destruye el enemigo después de 5 segundos
+            Destroy(enemigo, 5f);
         }
     }
 }

@@ -26,7 +26,13 @@ public class ExplosionEventCaller : MonoBehaviour
 
     //CAMBIO ESCENA
 
-    public string nombreEscenaFinal = "EscenaFinal";
+    public string escenaFinal = "OUTRO";
+
+    public CanvasGroup panelNegro;
+
+    private bool yaEjecutado = false;
+
+    public float tiempoAntesDeCambio = 1f;
 
     //SUBTITULOS DESMAYO
 
@@ -69,22 +75,8 @@ public class ExplosionEventCaller : MonoBehaviour
 
     }
 
-    public void ReproducirSonidoFondo()
-    {
-        StartCoroutine(FadeInSonidoFondo());
-    }
 
-
-    public void DetenerSonidoFondo()
-    {
-        StartCoroutine(FadeOutSonidoFondo()); // ahora funciona sin error
-    }
-
-    public void CambiarEscena()
-    {
-        StartCoroutine(FadeOutSonidoFondo(nombreEscenaFinal));
-    }
-
+    
     IEnumerator PlaySoundClip(AudioClip clip)
     {
         if (clip == null)
@@ -98,52 +90,101 @@ public class ExplosionEventCaller : MonoBehaviour
         yield return new WaitForSeconds(clip.length);
     }
 
+
+    public void ReproducirSonidoFondo()
+    {
+        StartCoroutine(FadeInSonidoFondo());
+    }
+
+    public void DetenerSonidoFondoYEscena()
+    {
+        StartCoroutine(FadeOutSonidoFondoYEscena());
+    }
+
     IEnumerator FadeInSonidoFondo()
     {
         if (musicaDeFondo == null)
             yield break;
 
-        audioLoopSource.clip = musicaDeFondo;
-        audioLoopSource.loop = true;
-        audioLoopSource.volume = 0f;
-        audioLoopSource.Play();
+        audioSource.clip = musicaDeFondo;
+        audioSource.loop = true;
+        audioSource.volume = 0f;
+        audioSource.Play();
 
-        float duracion = 2f; 
+        float duracion = 2f;
         float tiempo = 0f;
 
         while (tiempo < duracion)
         {
             tiempo += Time.deltaTime;
-            audioLoopSource.volume = Mathf.Lerp(0f, volumenSonidoFondoObjetivo, tiempo / duracion);
+            audioSource.volume = Mathf.Lerp(0f, volumenSonidoFondoObjetivo, tiempo / duracion);
             yield return null;
         }
 
-        audioLoopSource.volume = volumenSonidoFondoObjetivo;
+        audioSource.volume = volumenSonidoFondoObjetivo;
     }
 
-    IEnumerator FadeOutSonidoFondo()
-    {
-        yield return StartCoroutine(FadeOutSonidoFondo(nombreEscenaFinal));
-    }
-
-    IEnumerator FadeOutSonidoFondo(string escena)
+    IEnumerator FadeOutSonidoFondoYEscena()
     {
         float duracion = 2f;
         float tiempo = 0f;
-        float volumenInicial = audioLoopSource.volume;
+        float volumenInicial = audioSource.volume;
 
         while (tiempo < duracion)
         {
             tiempo += Time.deltaTime;
-            audioLoopSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracion);
+            audioSource.volume = Mathf.Lerp(volumenInicial, 0f, tiempo / duracion);
             yield return null;
         }
 
-        audioLoopSource.Stop();
-        audioLoopSource.volume = volumenSonidoFondoObjetivo;
+        audioSource.Stop();
 
-        SceneManager.LoadScene(escena);
+
+        float duracionFadeNegro = 1f;
+        float t = 0f;
+
+        while (t < duracionFadeNegro)
+        {
+            t += Time.deltaTime;
+            panelNegro.alpha = Mathf.Lerp(0f, 1f, t / duracionFadeNegro);
+            yield return null;
+        }
+
+        panelNegro.alpha = 1f;
+
+        
+        if (!string.IsNullOrEmpty(escenaFinal))
+        {
+            PlayerPrefs.SetString("NextScene", "OUTRO");
+            SceneManager.LoadScene("LoadingScene");
+        }
+        else
+        {
+            Debug.LogError("Nombre de escena final no asignado.");
+        }
     }
+
+
+
+    IEnumerator FadeInPanelNegro()
+    {
+        if (panelNegro == null) yield break;
+
+        panelNegro.gameObject.SetActive(true);
+
+        float duracion = 2f;
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.deltaTime;
+            panelNegro.alpha = Mathf.Lerp(0f, 1f, tiempo / duracion);
+            yield return null;
+        }
+
+        panelNegro.alpha = 1f;
+    }
+
 
     //SONIDO ANIMACION CONFIG
 

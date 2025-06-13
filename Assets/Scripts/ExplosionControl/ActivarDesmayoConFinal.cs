@@ -83,6 +83,9 @@ public class ActivarDesmayoConFinal : MonoBehaviour
 
         
         panelNegro.alpha = 1;
+        ExplosionEventCaller evento = GameObject.FindObjectOfType<ExplosionEventCaller>();
+        if (evento != null)
+            evento.DetenerSonidoFondoYEscena();
     }
 
     System.Collections.IEnumerator Parpadear(int veces, float duracion)
