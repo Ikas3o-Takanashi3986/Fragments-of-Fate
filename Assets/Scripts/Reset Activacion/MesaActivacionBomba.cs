@@ -11,7 +11,11 @@ public class MesaActivacionBomba : MonoBehaviour
     public TextMeshPro textoTemporizador;      
 
     
-    public GameObject luzAlFinal;              
+    public GameObject luzAlFinal;
+    public GameObject luzAlFinal2;
+    public GameObject luzAlFinal3;
+    public GameObject luzAlFinal4;
+    public GameObject luzAlFinal5;
     public float intervaloParpadeo = 0.5f;
 
     
@@ -31,6 +35,8 @@ public class MesaActivacionBomba : MonoBehaviour
     private bool jugadorDentro = false;
 
     public AudioSource sonidoAlarma;
+    public AudioSource press;
+    public AudioSource MUSICAESCAPE;
 
     void Update()
     {
@@ -39,6 +45,9 @@ public class MesaActivacionBomba : MonoBehaviour
             pasoProhibido.SetActive(false);
             bombaActivada = true;
             ActivarEventos();
+
+            press.Play();
+            MUSICAESCAPE.Play();
 
             if (sonidoAlarma != null && !sonidoAlarma.isPlaying)
             {
@@ -66,6 +75,11 @@ public class MesaActivacionBomba : MonoBehaviour
 
         
         luzAlFinal.SetActive(true);
+        luzAlFinal2.SetActive(true);
+        luzAlFinal3.SetActive(true);
+        luzAlFinal4.SetActive(true);
+        luzAlFinal5.SetActive(true);
+
         StartCoroutine(ParpadearLuz());
 
         
@@ -85,6 +99,11 @@ public class MesaActivacionBomba : MonoBehaviour
         while (true)
         {
             luzAlFinal.SetActive(!luzAlFinal.activeSelf);
+            luzAlFinal2.SetActive(!luzAlFinal2.activeSelf);
+            luzAlFinal3.SetActive(!luzAlFinal3.activeSelf);
+            luzAlFinal4.SetActive(!luzAlFinal2.activeSelf);
+            luzAlFinal5.SetActive(!luzAlFinal3.activeSelf);
+
             yield return new WaitForSeconds(intervaloParpadeo);
         }
     }

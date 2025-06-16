@@ -33,7 +33,9 @@ public class DespertarController : MonoBehaviour
     {
         yield return new WaitForSeconds(delayAntesParpadeos);
 
-        
+        CharacterController cc = jugador.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+
         if (jugador != null && puntoDeReaparicion != null)
         {
             jugador.position = puntoDeReaparicion.position;
@@ -77,5 +79,8 @@ public class DespertarController : MonoBehaviour
         }
         if (pantallaNegra != null)
             pantallaNegra.color = new Color(0, 0, 0, toAlpha);
+
+        CharacterController cc = jugador.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = true;
     }
 }
