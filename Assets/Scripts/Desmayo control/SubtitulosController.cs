@@ -36,14 +36,15 @@ public class SubtitulosController : MonoBehaviour
     public IEnumerator MostrarSubtitulos()
     {
         textoSubtitulo.gameObject.SetActive(true);
-        while (true)
-            while (indiceActual < subtitulos.Length)
-            {
-                textoSubtitulo.text = subtitulos[indiceActual];
-                Debug.Log("Mostrando subtítulo: " + subtitulos[indiceActual]);
-                indiceActual++;
-                yield return new WaitForSeconds(duracionPorSubtitulo);
-            }
+
+        while (indiceActual < subtitulos.Length)
+        {
+            textoSubtitulo.text = subtitulos[indiceActual];
+            Debug.Log("Mostrando subtítulo: " + subtitulos[indiceActual]);
+            indiceActual++;
+            yield return new WaitForSeconds(duracionPorSubtitulo);
+        }
+
         textoSubtitulo.gameObject.SetActive(false);
     }
 }

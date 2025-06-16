@@ -16,6 +16,15 @@ public class MesaActivacionBomba : MonoBehaviour
     public GameObject luzAlFinal3;
     public GameObject luzAlFinal4;
     public GameObject luzAlFinal5;
+    public GameObject luzsemaforo1;
+    public GameObject luzsemaforo2;
+    public GameObject luzsemaforo3;
+
+    public GameObject pieza1;
+    public GameObject pieza2;
+    public GameObject pieza3;
+    public GameObject pieza4;
+
     public float intervaloParpadeo = 0.5f;
 
     
@@ -28,6 +37,7 @@ public class MesaActivacionBomba : MonoBehaviour
     
     public GameObject textoPresionarE;
     public GameObject pasoProhibido;
+    public GameObject chikisfinal;
 
     private bool bombaActivada = false;
     private float tiempoRestante = 900f;       
@@ -40,9 +50,17 @@ public class MesaActivacionBomba : MonoBehaviour
 
     void Update()
     {
+
         if (jugadorDentro && Input.GetKeyDown(KeyCode.E) && !bombaActivada)
         {
             pasoProhibido.SetActive(false);
+
+            pieza1.SetActive(true);
+            pieza2.SetActive(true);
+            pieza3.SetActive(true);
+            pieza4.SetActive(true);
+
+            chikisfinal.SetActive(true);
             bombaActivada = true;
             ActivarEventos();
 
@@ -80,6 +98,10 @@ public class MesaActivacionBomba : MonoBehaviour
         luzAlFinal4.SetActive(true);
         luzAlFinal5.SetActive(true);
 
+        luzsemaforo1.SetActive(true);
+        luzsemaforo2.SetActive(true);
+        luzsemaforo3.SetActive(true);
+
         StartCoroutine(ParpadearLuz());
 
         
@@ -103,6 +125,12 @@ public class MesaActivacionBomba : MonoBehaviour
             luzAlFinal3.SetActive(!luzAlFinal3.activeSelf);
             luzAlFinal4.SetActive(!luzAlFinal2.activeSelf);
             luzAlFinal5.SetActive(!luzAlFinal3.activeSelf);
+
+            luzsemaforo1.SetActive(!luzsemaforo1.activeSelf);
+            luzsemaforo2.SetActive(!luzsemaforo2.activeSelf);
+            luzsemaforo3.SetActive(!luzsemaforo3.activeSelf);
+
+
 
             yield return new WaitForSeconds(intervaloParpadeo);
         }
