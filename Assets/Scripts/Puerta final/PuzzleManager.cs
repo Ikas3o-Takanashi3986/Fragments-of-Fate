@@ -14,6 +14,7 @@ public class PuzzleManager : MonoBehaviour
 
     public GameObject puerta;
     public GameObject cristalSpeed;
+    public GameObject cristalCURA;
 
     [Header("Todos los sockets")]
 
@@ -114,6 +115,10 @@ public class PuzzleManager : MonoBehaviour
         if (cristalSpeed != null)
 
             cristalSpeed.SetActive(true);
+
+        if (cristalCURA != null)
+
+            cristalCURA.SetActive(true);
 
     }
 
