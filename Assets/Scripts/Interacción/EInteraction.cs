@@ -6,7 +6,7 @@ public class EInteraction : MonoBehaviour
 {
     private bool jugadorCerca = false;
     private float tiempoPresionando = 0f;
-    private float tiempoRequerido = 2f;
+    private float tiempoRequerido = 0.5f;
     private bool cristalRecolectado = false;
     private bool LlaveDeAcceso1Recolectada = false;
     private bool LlaveDeAcceso2Recolectada = false;
