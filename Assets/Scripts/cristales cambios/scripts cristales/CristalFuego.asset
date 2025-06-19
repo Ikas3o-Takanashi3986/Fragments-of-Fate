@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   visualPrefab: {fileID: 7187074444464202387, guid: 6001e7970f3e0854d8fc4588b4de13d4, type: 3}
   projectilePrefab: {fileID: 4365224214515245143, guid: a1fdca2b4d20dc341840f4fcc0fc1af8, type: 3}
-  proyectileDamage: 10
+  proyectileDamage: 3

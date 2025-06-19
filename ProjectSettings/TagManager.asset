@@ -20,6 +20,9 @@ TagManager:
   - HieloEnemigo
   - AguaEnemigo
   - Objeto3
+  - CritalHielo
+  - CritalAgua
+  - CritalFuego
   layers:
   - Default
   - TransparentFX

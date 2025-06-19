@@ -8,8 +8,13 @@ public class ChikisQueMuerden : MonoBehaviour
     public Transform PointerPlayer;
     public float LookRadius;
     public float LookRadiusAtaque;
+    public bool puedeSeguir = true;
 
     public Animator animatorEnemy;
+
+    public AudioSource sonidoPersecucion;
+    public AudioSource sonidoAtaque;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +37,8 @@ public class ChikisQueMuerden : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovNavMesh();
+        if (puedeSeguir && Agent.enabled)
+            MovNavMesh();
 
     }
 
@@ -40,7 +46,6 @@ public class ChikisQueMuerden : MonoBehaviour
     {
         FaceTarget();
         float distance = Vector3.Distance(PointerPlayer.position, transform.position);
-        // Debug.Log(distance);
 
         if (distance <= LookRadius)
         {
@@ -48,20 +53,40 @@ public class ChikisQueMuerden : MonoBehaviour
             animatorEnemy.SetBool("run", true);
             Agent.speed = 3f;
 
+            // Activar sonido de persecución
+            if (sonidoPersecucion != null && !sonidoPersecucion.isPlaying)
+                sonidoPersecucion.Play();
+
+            // Atacar
             if (distance <= LookRadiusAtaque)
             {
                 Agent.speed = 0f;
                 animatorEnemy.SetBool("ataque", true);
+
+                // Activar sonido de ataque
+                if (sonidoAtaque != null && !sonidoAtaque.isPlaying)
+                    sonidoAtaque.Play();
             }
             else
             {
                 animatorEnemy.SetBool("ataque", false);
+
+                // Detener sonido de ataque si está activo
+                if (sonidoAtaque != null && sonidoAtaque.isPlaying)
+                    sonidoAtaque.Stop();
             }
         }
         else
         {
             animatorEnemy.SetBool("run", false);
             Agent.speed = 0f;
+
+            // Detener ambos sonidos si no está en rango
+            if (sonidoPersecucion != null && sonidoPersecucion.isPlaying)
+                sonidoPersecucion.Stop();
+
+            if (sonidoAtaque != null && sonidoAtaque.isPlaying)
+                sonidoAtaque.Stop();
         }
     }
 
