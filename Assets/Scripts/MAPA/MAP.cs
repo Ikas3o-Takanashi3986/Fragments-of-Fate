@@ -6,7 +6,7 @@ public class MAP : MonoBehaviour
 {
     private bool jugadorCerca = false;
     private float tiempoPresionando = 0f;
-    private float tiempoRequerido = 2f;
+    private float tiempoRequerido = 0.5f;
     private bool recolectado = false;
 
     public GameObject Objetivo3;

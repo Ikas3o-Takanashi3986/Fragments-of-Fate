@@ -252,7 +252,7 @@ MonoBehaviour:
   Agent: {fileID: 381329235033422616}
   PointerPlayer: {fileID: 0}
   LookRadius: 17
-  LookRadiusAtaque: 6.4
+  LookRadiusAtaque: 5
   puedeSeguir: 1
   animatorEnemy: {fileID: 0}
   sonidoPersecucion: {fileID: 0}
@@ -268,7 +268,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 1.97
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3981572795909880577
 MonoBehaviour:
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b935c18e6a4a0204dae9a74befe91bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1oPorSegundo": 3
+  "da\xF1oPorSegundo": 2
 --- !u!114 &7350177179717194978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PerseguirClip: {fileID: 8300000, guid: fd2ef6f56411f7142b6f22f3180cddbc, type: 3}
   Source: {fileID: 7817440351805568690}
-  AtaqueClip: {fileID: 8300000, guid: f1b63fb0763e6fa468dec23554e4ad86, type: 3}
+  AtaqueClip: {fileID: 8300000, guid: b49caee21e53aeb48aac8ebc7947c21d, type: 3}
 --- !u!1001 &1901706476899033664
 PrefabInstance:
   m_ObjectHideFlags: 0
