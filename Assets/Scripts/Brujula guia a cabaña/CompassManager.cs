@@ -12,7 +12,7 @@ public class CompassManager : MonoBehaviour
     public TMP_Text messageText;
 
     public float distanceToDisable = 5f;  
-    public KeyCode activateKey = KeyCode.D;  
+    public KeyCode activateKey = KeyCode.T;  
 
     public bool isInOpenArea = false;   
     private bool hasCompass = false;      
@@ -32,7 +32,7 @@ public class CompassManager : MonoBehaviour
                 else
                 {
                     
-                    StartCoroutine(ShowMessage("Creo que necesito estar en un espacio abierto para usarlo", 6f));
+                    StartCoroutine(ShowMessage("Necesito estar en un espacio abierto para usarla", 6f));
                 }
             }
         }
@@ -66,7 +66,7 @@ public class CompassManager : MonoBehaviour
 
             if (hasCompass)
             {
-                StartCoroutine(ShowMessage("Puedo guiarme con la brújula\nPresiona D", 6f));
+                StartCoroutine(ShowMessage("Puedo guiarme con la brújula\nPresiona T", 6f));
             }
         }
     }
