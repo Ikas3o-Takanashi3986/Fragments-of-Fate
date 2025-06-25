@@ -12,14 +12,14 @@ public class DoorInteraction : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        if (GameManager.Instance.hasKey)
+        if (GameManage.Instance.hasKey)
         {
             SceneTransitionManager.Instance.SetSpawnPoint(spawnPointInNextScene);
             SceneManager.LoadScene(nextScene);
         }
         else
         {
-            GameManager.Instance.ShowNeedKeyMessage();
+            GameManage.Instance.ShowNeedKeyMessage();
         }
     }
 }
