@@ -10,29 +10,83 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
     public float fieldOfView = 60f; 
 
     CharacterController cc;
-    bool jumpscareTriggered = false;
+    private Animation anim;
+    private bool isMoving = false;
+    private bool jumpscareTriggered = false;
 
-    void Start() => cc = GetComponent<CharacterController>();
+    public Transform visualModel;
+    public float modelOffsetY = 0f;
+
+    void Start()
+    {
+        cc = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animation>();
+
+        if (playerCamera == null)
+        {
+            Camera cam = Camera.main;
+            if (cam != null)
+                playerCamera = cam.transform;
+        }
+
+        anim.Play("Idle");
+    }
 
     void Update()
     {
-        if (jumpscareTriggered || GameManage.Instance.controlsLocked) return;
+        LookAtPlayer();
+
+        if (jumpscareTriggered || GameManage.Instance.controlsLocked)
+        {
+            SetAnimation(false);
+            return;
+        }
 
         Vector3 dirToPlayer = playerCamera.position - transform.position;
+        dirToPlayer.y = 0f;
         float angle = Vector3.Angle(playerCamera.forward, -dirToPlayer);
 
-       
-        if (angle > fieldOfView)
+        bool shouldMove = angle > fieldOfView;
+
+        if (shouldMove)
         {
             Vector3 move = dirToPlayer.normalized * moveSpeed * Time.deltaTime;
             cc.Move(move);
         }
 
-        
+        SetAnimation(shouldMove);
+
         if (dirToPlayer.magnitude <= killDistance)
         {
             jumpscareTriggered = true;
+            SetAnimation(false);
             GameManage.Instance.TriggerJumpscare();
         }
+    }
+
+    void LookAtPlayer()
+    {
+        if (visualModel == null || playerCamera == null) return;
+
+        Vector3 direction = playerCamera.position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            visualModel.rotation = targetRotation * Quaternion.Euler(0, modelOffsetY, 0);
+        }
+    }
+
+    void SetAnimation(bool moving)
+    {
+        if (isMoving == moving) return; 
+
+        isMoving = moving;
+        if (moving)
+            anim.CrossFade("Run");
+        else
+            anim.CrossFade("Idle");
     }
 }

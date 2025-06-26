@@ -5,20 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class GameManage : MonoBehaviour
 {
-    public static GameManage Instance { get; private set; }
+    public static GameManage Instance;
 
-    public GameObject jumpscarePanel;
-    public GameObject needKeyText;
-    public float jumpscareDuration = 5f;
+    [Header("UI Prefab")]
+    public GameObject jumpscarePanelPrefab;
+    public GameObject NeedKeyText;
 
-    public bool hasKey = false;
-    public bool controlsLocked = false;
+    [Header("Opciones")]
+    public float jumpscareDuration = 4f;
+
+    [HideInInspector] public bool hasKey = false;
+    [HideInInspector] public bool controlsLocked = false;
+
+    private GameObject panelInstancia;
+
+    
 
     void Awake()
     {
-        if (Instance != null) { Destroy(gameObject); return; }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneReloaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void TriggerJumpscare()
@@ -30,21 +44,54 @@ public class GameManage : MonoBehaviour
     IEnumerator JumpscareRoutine()
     {
         controlsLocked = true;
-        jumpscarePanel.SetActive(true);
+
+        if (panelInstancia != null)
+            Destroy(panelInstancia);
+
+
+        Canvas canvas = FindObjectOfType<Canvas>();
+
+        if (canvas != null && jumpscarePanelPrefab != null)
+        {
+           
+            panelInstancia = Instantiate(jumpscarePanelPrefab, canvas.transform);
+            panelInstancia.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError(" No se encontró Canvas o no se asignó jumpscarePanelPrefab.");
+        }
+
         yield return new WaitForSeconds(jumpscareDuration);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+
+       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnSceneReloaded(Scene scene, LoadSceneMode mode)
+    {
+       
+        controlsLocked = false;
+        hasKey = false;
+
+       
+        panelInstancia = null;
     }
 
     public void ShowNeedKeyMessage()
     {
-        if (needKeyText == null) return;
         StartCoroutine(NeedKeyRoutine());
     }
 
     IEnumerator NeedKeyRoutine()
     {
-        needKeyText.SetActive(true);
+        if (NeedKeyText != null)
+            NeedKeyText.SetActive(true);
+
         yield return new WaitForSeconds(2f);
-        needKeyText.SetActive(false);
+
+        if (NeedKeyText != null)
+            NeedKeyText.SetActive(false);
     }
+
 }
