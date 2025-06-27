@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyChaseWhenNotSeen : MonoBehaviour
 {
-    public Transform playerCamera;   
-    public float moveSpeed = 3f;
+    public Transform playerCamera;
     public float killDistance = 1.5f;
-    public float fieldOfView = 60f; 
+    public float fieldOfView = 60f;
 
-    CharacterController cc;
+    private NavMeshAgent agent;
     private Animation anim;
     private bool isMoving = false;
     private bool jumpscareTriggered = false;
@@ -19,11 +19,14 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
 
     private AudioSource stepAudio;
 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
     void Start()
     {
-        stepAudio = GetComponent<AudioSource>();
-        cc = GetComponent<CharacterController>();
+        agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animation>();
+        stepAudio = GetComponent<AudioSource>();
 
         if (playerCamera == null)
         {
@@ -32,7 +35,11 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
                 playerCamera = cam.transform;
         }
 
-        anim.Play("Idle");
+        
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+
+        anim?.Play("Idle");
     }
 
     void Update()
@@ -41,7 +48,7 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
 
         if (jumpscareTriggered || GameManage.Instance.controlsLocked)
         {
-            SetAnimation(false);
+            StopMovement();
             return;
         }
 
@@ -53,8 +60,13 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
 
         if (shouldMove)
         {
-            Vector3 move = dirToPlayer.normalized * moveSpeed * Time.deltaTime;
-            cc.Move(move);
+            if (agent != null)
+                agent.SetDestination(playerCamera.position);
+        }
+        else
+        {
+            if (agent != null)
+                agent.ResetPath();
         }
 
         SetAnimation(shouldMove);
@@ -62,9 +74,35 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
         if (dirToPlayer.magnitude <= killDistance)
         {
             jumpscareTriggered = true;
-            SetAnimation(false);
+            StopMovement();
             GameManage.Instance.TriggerJumpscare();
         }
+    }
+
+    public void ResetEnemyPosition()
+    {
+        
+        if (agent != null)
+        {
+            agent.enabled = false;
+            transform.position = startPosition;
+            transform.rotation = startRotation;
+            agent.enabled = true;
+            agent.ResetPath();
+        }
+
+        jumpscareTriggered = false;
+        SetAnimation(false);
+    }
+
+    void StopMovement()
+    {
+        if (agent != null)
+        {
+            agent.ResetPath();
+            agent.isStopped = true;
+        }
+        SetAnimation(false);
     }
 
     void LookAtPlayer()
@@ -77,7 +115,6 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
         if (direction.sqrMagnitude > 0.01f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-
             visualModel.rotation = targetRotation * Quaternion.Euler(0, modelOffsetY, 0);
         }
     }
