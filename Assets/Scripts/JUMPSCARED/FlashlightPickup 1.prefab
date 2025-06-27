@@ -44,11 +44,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 30
-  m_Range: 12.962052
-  m_SpotAngle: 52.348175
-  m_InnerSpotAngle: 19.534288
+  m_Color: {r: 0.7924528, g: 0.77740973, b: 0.736383, a: 1}
+  m_Intensity: 36.3
+  m_Range: 48.73
+  m_SpotAngle: 43.093952
+  m_InnerSpotAngle: 38.963703
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -87,7 +87,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 3.7
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -125,6 +125,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3164201036588712669}
   - component: {fileID: 7811815863284232577}
+  - component: {fileID: 2522847126166411870}
+  - component: {fileID: 5187760285897324582}
   m_Layer: 0
   m_Name: FlashlightPickup 1
   m_TagString: Untagged
@@ -161,6 +163,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e32474a5e14a3b4e90c3fccc7db56a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoEncender: {fileID: 8300000, guid: 5e112c15dbeaa7540babf10d6ca06f81, type: 3}
+  sonidoApagar: {fileID: 8300000, guid: 5e112c15dbeaa7540babf10d6ca06f81, type: 3}
+--- !u!114 &2522847126166411870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898432788811426399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8bcd1dd28ec644cbd04cd06b58aa55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadCaminar: 5
+  cantidadCaminarY: 0.03
+  cantidadCaminarX: 0.015
+  velocidadCorrer: 10
+  cantidadCorrerY: 0.06
+  cantidadCorrerX: 0.03
+  fuerzaSalto: 0.1
+  suavizadoSalto: 5
+--- !u!65 &5187760285897324582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898432788811426399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.09, z: 0.25}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1001 &1819009885050975154
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,12 +6,21 @@ using UnityEngine.UI;
 public class FlashlightPickup : MonoBehaviour
 {
     public GameObject playerFlashlightPrefab;
-    public GameObject interactionUI; 
+    public GameObject interactionUI;
+    public AudioClip pickupSound;
     private bool isPlayerNearby = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         interactionUI.SetActive(false);
+
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -31,7 +40,12 @@ public class FlashlightPickup : MonoBehaviour
                 flashlight.transform.localPosition = new Vector3(0.434f, -0.374f, 0.813f); 
                 flashlight.transform.localRotation = Quaternion.identity;
 
-                
+
+                if (pickupSound != null)
+                {
+                    audioSource.PlayOneShot(pickupSound);
+                }
+
                 interactionUI.SetActive(false);
                 gameObject.SetActive(false);
             }

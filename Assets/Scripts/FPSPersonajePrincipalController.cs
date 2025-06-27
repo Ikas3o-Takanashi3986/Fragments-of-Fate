@@ -40,7 +40,6 @@ public class FPSPersonajePrincipalController : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
