@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlCamaraDesmayo : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class ControlCamaraDesmayo : MonoBehaviour
 
     public float tiempoNegroPostDesmayo = 20f; 
 
-    public DespertarController despertarController; 
+   
     
     public GameObject jugador;
     
@@ -70,18 +71,8 @@ public class ControlCamaraDesmayo : MonoBehaviour
 
         yield return new WaitForSeconds(tiempoNegroPostDesmayo);
 
-        
-        if (jugador != null)
-            jugador.SetActive(true);
+        SceneManager.LoadScene("Persecusion despuesdesmayo");
 
-        camaraPrincipal.gameObject.SetActive(true);
-        camaraDesmayo.gameObject.SetActive(false);
-
-        pantallaNegra.color = new Color(0, 0, 0, 1);
-        pantallaNegra.gameObject.SetActive(true);
-
-        if (despertarController != null)
-            despertarController.IniciarDespertar();
     }
 
     public void ComenzarParpadeo()

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 9522806dd283ed2458427798a3088976
+  - enabled: 1
+    path: Assets/Scenes/Persecusion despuesdesmayo.unity
+    guid: 0fb56e9ea64ad39418cb3924d047c7a9
   m_configObjects: {}
