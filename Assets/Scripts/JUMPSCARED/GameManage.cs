@@ -19,7 +19,7 @@ public class GameManage : MonoBehaviour
 
     private GameObject panelInstancia;
 
-    
+    public AudioSource jumpscareAudio;
 
     void Awake()
     {
@@ -39,6 +39,9 @@ public class GameManage : MonoBehaviour
     {
         if (controlsLocked) return;
         StartCoroutine(JumpscareRoutine());
+
+        if (jumpscareAudio != null && !jumpscareAudio.isPlaying)
+            jumpscareAudio.Play();
     }
 
     IEnumerator JumpscareRoutine()

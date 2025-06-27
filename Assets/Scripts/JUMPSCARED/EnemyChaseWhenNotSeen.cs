@@ -17,8 +17,11 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
     public Transform visualModel;
     public float modelOffsetY = 0f;
 
+    private AudioSource stepAudio;
+
     void Start()
     {
+        stepAudio = GetComponent<AudioSource>();
         cc = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animation>();
 
@@ -81,12 +84,22 @@ public class EnemyChaseWhenNotSeen : MonoBehaviour
 
     void SetAnimation(bool moving)
     {
-        if (isMoving == moving) return; 
+        if (isMoving == moving) return;
 
         isMoving = moving;
+        if (anim == null) return;
+
         if (moving)
+        {
             anim.CrossFade("Run");
+            if (stepAudio != null && !stepAudio.isPlaying)
+                stepAudio.Play();
+        }
         else
+        {
             anim.CrossFade("Idle");
+            if (stepAudio != null && stepAudio.isPlaying)
+                stepAudio.Stop();
+        }
     }
 }
