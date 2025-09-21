@@ -5,6 +5,7 @@ using UnityEngine;
 public class LinternaCristalControl : MonoBehaviour
 {
     public Light linterna;
+    public Light linterna2;
     public AudioSource audioSourceLIGHT;
     public AudioClip linternaClip;
 
@@ -19,6 +20,8 @@ public class LinternaCristalControl : MonoBehaviour
         {
             linternaEncendida = !linternaEncendida;
             linterna.enabled = linternaEncendida;
+
+            linterna2.enabled = linternaEncendida;
 
             if (audioSourceLIGHT != null && linternaClip != null)
             {
